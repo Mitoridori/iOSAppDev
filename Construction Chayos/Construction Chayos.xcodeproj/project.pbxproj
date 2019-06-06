@@ -17,6 +17,10 @@
 		6009E0F922A995540034FFC7 /* Bricks.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0F822A995540034FFC7 /* Bricks.sks */; };
 		6009E0FB22A995B50034FFC7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0FA22A995B50034FFC7 /* Player.swift */; };
 		6009E0FD22A995CF0034FFC7 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0FC22A995CF0034FFC7 /* Interface.swift */; };
+		6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0FE22A999E20034FFC7 /* GameBoard.sks */; };
+		6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10022A99C510034FFC7 /* LevelOne.sks */; };
+		6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* LevelTwo.sks */; };
+		6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* LevelThree.sks */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -58,6 +62,10 @@
 		6009E0F822A995540034FFC7 /* Bricks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Bricks.sks; sourceTree = "<group>"; };
 		6009E0FA22A995B50034FFC7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6009E0FC22A995CF0034FFC7 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		6009E0FE22A999E20034FFC7 /* GameBoard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameBoard.sks; sourceTree = "<group>"; };
+		6009E10022A99C510034FFC7 /* LevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelOne.sks; sourceTree = "<group>"; };
+		6009E10222A99C720034FFC7 /* LevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTwo.sks; sourceTree = "<group>"; };
+		6009E10422A99C8B0034FFC7 /* LevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThree.sks; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -171,6 +179,10 @@
 				6009E0F422A9950E0034FFC7 /* TopUI.sks */,
 				6009E0F622A995370034FFC7 /* Player.sks */,
 				6009E0F822A995540034FFC7 /* Bricks.sks */,
+				6009E0FE22A999E20034FFC7 /* GameBoard.sks */,
+				6009E10022A99C510034FFC7 /* LevelOne.sks */,
+				6009E10222A99C720034FFC7 /* LevelTwo.sks */,
+				6009E10422A99C8B0034FFC7 /* LevelThree.sks */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -282,14 +294,18 @@
 				DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */,
 				DF0AABB822A1A56D00C40685 /* Main.storyboard in Resources */,
 				DF0AABBA22A1A56E00C40685 /* Assets.xcassets in Resources */,
+				6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */,
 				DFFACC1022A84FCD002BC918 /* GameScene.sks in Resources */,
 				6009E0F722A995370034FFC7 /* Player.sks in Resources */,
 				DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */,
+				6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */,
 				6009E0EF22A984ED0034FFC7 /* LevelSelectorScene.sks in Resources */,
 				6009E0F922A995540034FFC7 /* Bricks.sks in Resources */,
 				6009E0F522A9950E0034FFC7 /* TopUI.sks in Resources */,
 				6009E0F322A994F50034FFC7 /* BottomUI.sks in Resources */,
+				6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
+				6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
