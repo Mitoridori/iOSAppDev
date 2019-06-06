@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6009E0E922A984050034FFC7 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0E822A984050034FFC7 /* Blocks.swift */; };
+		6009E0EB22A984530034FFC7 /* LevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0EA22A984530034FFC7 /* LevelSelector.swift */; };
+		6009E0EF22A984ED0034FFC7 /* LevelSelectorScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0EE22A984ED0034FFC7 /* LevelSelectorScene.sks */; };
+		6009E0F122A98B5C0034FFC7 /* Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0F022A98B5C0034FFC7 /* Collisions.swift */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6009E0E822A984050034FFC7 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		6009E0EA22A984530034FFC7 /* LevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelector.swift; sourceTree = "<group>"; };
+		6009E0EE22A984ED0034FFC7 /* LevelSelectorScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelectorScene.sks; sourceTree = "<group>"; };
+		6009E0F022A98B5C0034FFC7 /* Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collisions.swift; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 			children = (
 				DFFACC0E22A84F94002BC918 /* scene */,
 				DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */,
+				6009E0F022A98B5C0034FFC7 /* Collisions.swift */,
+				6009E0E822A984050034FFC7 /* Blocks.swift */,
 				DF0AABB022A1A56D00C40685 /* Actions.sks */,
 				DF0AABB222A1A56D00C40685 /* GameScene.swift */,
 				DF0AABB422A1A56D00C40685 /* GameViewController.swift */,
@@ -114,6 +124,7 @@
 				DF0AABB922A1A56E00C40685 /* Assets.xcassets */,
 				DF0AABBB22A1A56E00C40685 /* LaunchScreen.storyboard */,
 				DF0AABBE22A1A56E00C40685 /* Info.plist */,
+				6009E0EA22A984530034FFC7 /* LevelSelector.swift */,
 			);
 			path = "Construction Chayos";
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 			children = (
 				DFFACC0F22A84FCD002BC918 /* GameScene.sks */,
 				DFEDE74422A89379002405D8 /* PlayScene.sks */,
+				6009E0EE22A984ED0034FFC7 /* LevelSelectorScene.sks */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -254,6 +266,7 @@
 				DF0AABBA22A1A56E00C40685 /* Assets.xcassets in Resources */,
 				DFFACC1022A84FCD002BC918 /* GameScene.sks in Resources */,
 				DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */,
+				6009E0EF22A984ED0034FFC7 /* LevelSelectorScene.sks in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */,
+				6009E0E922A984050034FFC7 /* Blocks.swift in Sources */,
+				6009E0EB22A984530034FFC7 /* LevelSelector.swift in Sources */,
 				DF0AABB522A1A56D00C40685 /* GameViewController.swift in Sources */,
+				6009E0F122A98B5C0034FFC7 /* Collisions.swift in Sources */,
 				DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
