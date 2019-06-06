@@ -14,19 +14,24 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
-        let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width
-        let screenHeight = screenRect.size.height
-        
+        //background images
         backgroundColor = SKColor.gray
         let background = SKSpriteNode(imageNamed: "backgroundRocks")
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = -1
-        //background.size(CGSize(width: screenWidth, height: screenHeight))
-    
+        background.scale(to: CGSize(width: 2048, height: 1536))
         addChild(background)
         
-    
+        //title on page
+        let titleLabel = SKLabelNode(fontNamed: "Chalkduster")
+        titleLabel.text = "Construction Chayos"
+        titleLabel.fontColor = SKColor.yellow
+        titleLabel.fontSize = 60
+        //lable.zPosition = 150
+        titleLabel.position = CGPoint(x: size.width/2, y:size.height-size.height/4)
+        addChild(titleLabel)
+        
+
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
@@ -40,8 +45,21 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
     }
+    
+
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //Make the fun square flying thing!!!!
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos

@@ -16,6 +16,8 @@
 		DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABBB22A1A56E00C40685 /* LaunchScreen.storyboard */; };
 		DF0AABC822A1A56E00C40685 /* Construction_ChayosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABC722A1A56E00C40685 /* Construction_ChayosTests.swift */; };
 		DF0AABD322A1A56E00C40685 /* Construction_ChayosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABD222A1A56E00C40685 /* Construction_ChayosUITests.swift */; };
+		DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DFEDE74422A89379002405D8 /* PlayScene.sks */; };
+		DFFACC1022A84FCD002BC918 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DFFACC0F22A84FCD002BC918 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		DF0AABCE22A1A56E00C40685 /* Construction ChayosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Construction ChayosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABD222A1A56E00C40685 /* Construction_ChayosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Construction_ChayosUITests.swift; sourceTree = "<group>"; };
 		DF0AABD422A1A56E00C40685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEDE74422A89379002405D8 /* PlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayScene.sks; sourceTree = "<group>"; };
+		DFFACC0F22A84FCD002BC918 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		DF0AABAB22A1A56D00C40685 /* Construction Chayos */ = {
 			isa = PBXGroup;
 			children = (
+				DFFACC0E22A84F94002BC918 /* scene */,
 				DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */,
 				DF0AABB022A1A56D00C40685 /* Actions.sks */,
 				DF0AABB222A1A56D00C40685 /* GameScene.swift */,
@@ -129,6 +134,15 @@
 				DF0AABD422A1A56E00C40685 /* Info.plist */,
 			);
 			path = "Construction ChayosUITests";
+			sourceTree = "<group>";
+		};
+		DFFACC0E22A84F94002BC918 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				DFFACC0F22A84FCD002BC918 /* GameScene.sks */,
+				DFEDE74422A89379002405D8 /* PlayScene.sks */,
+			);
+			path = scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +249,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */,
 				DF0AABB822A1A56D00C40685 /* Main.storyboard in Resources */,
 				DF0AABBA22A1A56E00C40685 /* Assets.xcassets in Resources */,
+				DFFACC1022A84FCD002BC918 /* GameScene.sks in Resources */,
 				DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
 			);
