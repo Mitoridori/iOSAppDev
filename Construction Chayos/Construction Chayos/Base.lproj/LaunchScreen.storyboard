@@ -22,8 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Construction Chayos" textAlignment="center" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="k9J-Bb-RJe">
-                                <rect key="frame" x="16" y="303" width="345" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Construction Chaos" textAlignment="center" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="k9J-Bb-RJe">
+                                <rect key="frame" x="16" y="303" width="345" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
