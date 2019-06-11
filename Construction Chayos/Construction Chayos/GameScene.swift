@@ -8,62 +8,122 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+protocol EventListenerNode {
+    func didMoveToScene()
+}
 
-    let button = SKSpriteNode(imageNamed: "playbutton")
+protocol InteractiveNode {
+    func interact()
+}
+
+struct PhysicsCategory {
+    static let None:  UInt32 = 0
+    static let Player:   UInt32 = 0b1 // 1
+    static let Brick: UInt32 = 0b10 // 2
+    static let Board:   UInt32 = 0b100 // 4
+}
+
+
+class GameScene: SKScene {
+    
+    //var brickHS: BrickHS!
+    
+    
+    
+    var playable = true
     
     override func didMove(to view: SKView) {
-        //background images
-        backgroundColor = SKColor.gray
-        let background = SKSpriteNode(imageNamed: "backgroundRocks")
-        background.position = CGPoint(x: size.width/2, y: size.height/2)
-        background.zPosition = -1
-        background.scale(to: CGSize(width: 1536, height: 2048))
-        addChild(background)
+        // Calculate playable margin
         
-        //title on page
-        let titleLabel = SKLabelNode(fontNamed: "Chalkduster")
-        titleLabel.text = "Construction Chayos"
-        titleLabel.fontColor = SKColor.yellow
-        titleLabel.fontSize = 70
-        //lable.zPosition = 150
-        titleLabel.position = CGPoint(x: size.width/2, y:size.height-size.height/4)
-        addChild(titleLabel)
+        let maxAspectRatio: CGFloat = 16.0/9.0
+        let maxAspectRatioHeight = size.width / maxAspectRatio
+        let playableMargin: CGFloat = (size.height
+            - maxAspectRatioHeight)/2
         
+        let playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: size.height-playableMargin*2)
+        
+//        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
+//        //physicsWorld.contactDelegate = self as? SKPhysicsContactDelegate
+//        physicsBody!.categoryBitMask = PhysicsCategory.Edge
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if let eventListenerNode = node as? EventListenerNode {
+                eventListenerNode.didMoveToScene()
+                }
+            })
+        
+        //brickHS = childNode(withName: "LBOrange") as! BrickHS
 
-        button.name = "btn"
-        button.size.height = 200
-        button.size.width = 200
-        button.position = CGPoint(x: size.width/2, y: size.height/2)
-        addChild(button)
         
-        
-
+//        SKTAudio.sharedInstance()
+//            .playBackgroundMusic("backgroundMusic.mp3")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        let positionInScene = touch!.location(in: self)
-        let touchedNode = self.atPoint(positionInScene)
-        
-        if let name = touchedNode.name {
-            if name == "btn" {
-                let scene = levelOne(size:CGSize(width:1536, height:2048 ))
-                let skView = self.view as! SKView
-                skView.showsFPS = true
-                skView.showsNodeCount = true
-                skView.ignoresSiblingOrder = true
-                scene.scaleMode = .aspectFill
-                skView.presentScene(scene)
-                
-               //let scene = SKScene(fileNamed: "LevelOne")
-              //  scene?.size = CGSize(width: 1536, height: 2048)
-              //  scene?.scaleMode = .aspectFill
-              //  view?.presentScene(scene!)
-                
-            }
-        }
-
-}
+//    func didBegin(_ contact: SKPhysicsContact) {
+//        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+//
+//        if collision == PhysicsCategory.Label | PhysicsCategory.Edge {
+//            let labelNode = contact.bodyA.categoryBitMask == PhysicsCategory.Label ?
+//                contact.bodyA.node :
+//                contact.bodyB.node
+//
+//            if let message = labelNode as? MessageNode {
+//                message.didBounce()
+//            }
+//        }
+//
+//        if !playable {
+//            return
+//        }
+//
+//        if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
+//            print("SUCCESS")
+//            win()
+//        } else if collision == PhysicsCategory.Cat | PhysicsCategory.Edge {
+//            print("FAIL")
+//            lose()
+//        }
+//    }
+//
+//    func inGameMessage(text: String) {
+//        let message = MessageNode(message: text)
+//        message.position = CGPoint(x: frame.midX, y: frame.midY)
+//        addChild(message)
+//    }
+//
+//    func newGame() {
+//        let scene = GameScene(fileNamed:"GameScene")
+//        scene!.scaleMode = scaleMode
+//        view!.presentScene(scene)
+//    }
+//
+//    func lose() {
+//        playable = false
+//
+//        //1
+//        SKTAudio.sharedInstance().pauseBackgroundMusic()
+//        SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
+//
+//        //2
+//        inGameMessage(text: "Try again...")
+//
+//        //3
+//        run(SKAction.afterDelay(5, runBlock: newGame))
+//
+//        catNode.wakeUp()
+//    }
+//
+//    func win() {
+//        playable = false
+//
+//        SKTAudio.sharedInstance().pauseBackgroundMusic()
+//        SKTAudio.sharedInstance().playSoundEffect("win.mp3")
+//
+//        inGameMessage(text: "Nice job!")
+//
+//        run(SKAction.afterDelay(3, runBlock: newGame))
+//
+//        catNode.curlAt(scenePoint: bedNode.position)
+//    }
 }
 
