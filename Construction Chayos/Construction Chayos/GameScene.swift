@@ -8,32 +8,20 @@
 
 import SpriteKit
 
-protocol EventListenerNode {
-    func didMoveToScene()
-    }
+class GameScene: SKScene {
 
-protocol InteractiveNode {
-    func interact()
-}
-
-struct PhysicsCategory {
-    static let None:  UInt32 = 0 << 0
-    static let Player:   UInt32 = 1 << 1
-    static let Brick: UInt32 = 1 << 2
-    static let Board:   UInt32 = 1 << 4
-    static let Edge:  UInt32 = 1 << 6
-    static let VBrick: UInt32 = 1 << 3
-}
-
-
-class GameScene: SKScene, SKPhysicsContactDelegate {
-    
-    var playerNode:PlayerNode!
-    
-    var playable = true
+    let button = SKSpriteNode(imageNamed: "playbutton")
     
     override func didMove(to view: SKView) {
+        //background images
+        backgroundColor = SKColor.gray
+        let background = SKSpriteNode(imageNamed: "backgroundRocks")
+        background.position = CGPoint(x: size.width/2, y: size.height/2)
+        background.zPosition = -1
+        background.scale(to: CGSize(width: 1536, height: 2048))
+        addChild(background)
         
+<<<<<<< HEAD
         // Calculate playable margin
         let maxAspectRatio: CGFloat = 16.0/9.0
         let maxAspectRatioHeight = size.width / maxAspectRatio
@@ -53,15 +41,51 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         
         playerNode = childNode(withName: "Player") as? PlayerNode
+=======
+        //title on page
+        let titleLabel = SKLabelNode(fontNamed: "Chalkduster")
+        titleLabel.text = "Construction Chayos"
+        titleLabel.fontColor = SKColor.yellow
+        titleLabel.fontSize = 70
+        //lable.zPosition = 150
+        titleLabel.position = CGPoint(x: size.width/2, y:size.height-size.height/4)
+        addChild(titleLabel)
+>>>>>>> 780f035c8990aa17074400146e8da0e94f6b12c6
+        
+
+        button.name = "btn"
+        button.size.height = 200
+        button.size.width = 200
+        button.position = CGPoint(x: size.width/2, y: size.height/2)
+        addChild(button)
         
         
-        
- 
+
     }
     
- 
-    
-    
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let positionInScene = touch!.location(in: self)
+        let touchedNode = self.atPoint(positionInScene)
+        
+        if let name = touchedNode.name {
+            if name == "btn" {
+                let scene = levelOne(size:CGSize(width:1536, height:2048 ))
+                let skView = self.view as! SKView
+                skView.showsFPS = true
+                skView.showsNodeCount = true
+                skView.ignoresSiblingOrder = true
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene)
+                
+               //let scene = SKScene(fileNamed: "LevelOne")
+              //  scene?.size = CGSize(width: 1536, height: 2048)
+              //  scene?.scaleMode = .aspectFill
+              //  view?.presentScene(scene!)
+                
+            }
+        }
+
+}
 }
 

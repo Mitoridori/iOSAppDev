@@ -60,7 +60,7 @@ class levelOne: SKScene, SKPhysicsContactDelegate  {
         //player.physicsBody?.isDynamic = false
         addChild(player)
         
-       
+        
         LBOrange.anchorPoint = CGPoint( x:0, y:0)
         LBOrange.position = CGPoint(x:-320, y: 0)
         LBOrange.scale(to: CGSize(width: 320, height: 160))
@@ -69,10 +69,9 @@ class levelOne: SKScene, SKPhysicsContactDelegate  {
         LBOrange.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 320, height: 160))
         LBOrange.physicsBody?.affectedByGravity = false
         LBOrange.physicsBody?.allowsRotation = false
-        LBOrange.physicsBody?.isDynamic = false
+        //LBOrange.physicsBody?.isDynamic = false
         LBOrange.physicsBody?.categoryBitMask = brickCategory
         addChild(LBOrange)
-        
         
         
         LBOrangeV.anchorPoint = CGPoint( x:0, y:0)
@@ -123,9 +122,23 @@ class levelOne: SKScene, SKPhysicsContactDelegate  {
         }
     }
 
-
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch = touches.first
+//        let location = touch!.location(in: self)
+//        let touchedNode = self.atPoint(location)
+//
+//        if let name = touchedNode.name {
+//            if name == "Player" {
+//                player.position.x = location.x
+//                //player.position.y = location.y
+//            }
+//            else if name == "Orange" {
+//                LBOrange.position.x = location.x
+//                //LBOrange.position.y = location.y
+//            }
+//        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
