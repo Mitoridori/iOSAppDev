@@ -12,6 +12,9 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
     func didMoveToScene() {
         isUserInteractionEnabled = true
+        physicsBody!.categoryBitMask = PhysicsCategory.Brick
+        physicsBody!.collisionBitMask = PhysicsCategory.Player; PhysicsCategory.VBrick; PhysicsCategory.Brick
+        
     }
     
     func interact() {

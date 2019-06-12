@@ -20,9 +20,9 @@ struct PhysicsCategory {
     static let None:  UInt32 = 0 << 0
     static let Player:   UInt32 = 1 << 1
     static let Brick: UInt32 = 1 << 2
-    static let Board:   UInt32 = 1 << 3
-    static let Edge:  UInt32 = 1 << 4
-    static let VBrick: UInt32 = 1 << 5
+    static let Board:   UInt32 = 1 << 4
+    static let Edge:  UInt32 = 1 << 6
+    static let VBrick: UInt32 = 1 << 3
 }
 
 
@@ -55,8 +55,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerNode = childNode(withName: "Player") as? PlayerNode
         
         
+        
  
     }
+    
+ 
+    
+    
     
 }
 
