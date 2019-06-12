@@ -17,18 +17,18 @@ protocol InteractiveNode {
 }
 
 struct PhysicsCategory {
-    static let None:  UInt32 = 0
-    static let Player:   UInt32 = 0b1 // 1
-    static let Brick: UInt32 = 0b10 // 2
-    static let Board:   UInt32 = 0b100 // 4
-    static let Edge:  UInt32 = 0b1000 // 8
+    static let None:  UInt32 = 0 << 0
+    static let Player:   UInt32 = 1 << 1
+    static let Brick: UInt32 = 1 << 2
+    static let Board:   UInt32 = 1 << 3
+    static let Edge:  UInt32 = 1 << 4
+    static let VBrick: UInt32 = 1 << 5
 }
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
-    var bricksNode:BricksNode!
     
     var playable = true
     
@@ -53,7 +53,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         
         playerNode = childNode(withName: "Player") as? PlayerNode
-        bricksNode = childNode(withName: "Brick") as? BricksNode
         
         
  
