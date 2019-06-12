@@ -21,6 +21,7 @@
 		6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10022A99C510034FFC7 /* LevelOne.sks */; };
 		6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* LevelTwo.sks */; };
 		6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* LevelThree.sks */; };
+		60A642F122B040E40046F325 /* BottomUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A642F022B040E40046F325 /* BottomUI.storyboard */; };
 		DF091C0F22ADCDD700F3A4CB /* levelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF091C0E22ADCDD700F3A4CB /* levelOne.swift */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
@@ -66,6 +67,7 @@
 		6009E10022A99C510034FFC7 /* LevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelOne.sks; sourceTree = "<group>"; };
 		6009E10222A99C720034FFC7 /* LevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTwo.sks; sourceTree = "<group>"; };
 		6009E10422A99C8B0034FFC7 /* LevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThree.sks; sourceTree = "<group>"; };
+		60A642F022B040E40046F325 /* BottomUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomUI.storyboard; sourceTree = "<group>"; };
 		DF091C0E22ADCDD700F3A4CB /* levelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = levelOne.swift; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				6009E10022A99C510034FFC7 /* LevelOne.sks */,
 				6009E10222A99C720034FFC7 /* LevelTwo.sks */,
 				6009E10422A99C8B0034FFC7 /* LevelThree.sks */,
+				60A642F022B040E40046F325 /* BottomUI.storyboard */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				6009E0F322A994F50034FFC7 /* BottomUI.sks in Resources */,
 				6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
+				60A642F122B040E40046F325 /* BottomUI.storyboard in Resources */,
 				6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
