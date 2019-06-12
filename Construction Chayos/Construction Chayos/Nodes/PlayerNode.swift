@@ -6,4 +6,11 @@
 //  Copyright © 2019 Rebecca Stewart. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+class PlayerNode: SKSpriteNode, EventListenerNode {
+    func didMoveToScene() {
+        print ("I'm a player!")
+    }
+
+}
