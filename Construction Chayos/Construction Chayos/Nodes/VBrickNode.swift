@@ -23,12 +23,16 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
-        let touch = touches.first
-        let location = touch!.location(in: self)
-        
-        position.y = location.y
-        
-        print("brick Moves")
+        guard touches.first != nil else {
+            return
+        }
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            position.y = location.y
+            
+            print("V Bricks Moves")
+        }
         
     }
     

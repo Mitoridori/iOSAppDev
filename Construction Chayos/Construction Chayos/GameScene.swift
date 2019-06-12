@@ -39,8 +39,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let maxAspectRatioHeight = size.width / maxAspectRatio
         let playableMargin: CGFloat = (size.height - maxAspectRatioHeight)/2
         
-        let playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: size.height-playableMargin*2)
-        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
+//        let playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: size.height-playableMargin*2)
+//        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         
         //Physic items
         physicsWorld.contactDelegate = self
