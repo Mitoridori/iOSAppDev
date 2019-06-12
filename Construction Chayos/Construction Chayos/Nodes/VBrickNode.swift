@@ -19,26 +19,19 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     func interact() {
         
     }
-    
-    
+
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        guard touches.first != nil else {
-            return
+        if let touch = touches.first {
+            let touchLocation = touch.location(in: self)
+            position.y = touchLocation.y
         }
-        for touch in touches {
-            let location = touch.location(in: self)
-            
-            position.y = location.y
-            
-            print("V Bricks Moves")
-        }
-        
+
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         print ("touch over")
     }
-    
+
 }
