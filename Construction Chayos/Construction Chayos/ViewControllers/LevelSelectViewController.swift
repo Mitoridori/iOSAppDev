@@ -18,7 +18,7 @@ class LevelSelectViewController: UIViewController {
         
         if let gameViewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as? GameViewController {
             
-            navigationController?.pushViewController(gameViewController, animated: false)
+            navigationController?.pushViewController(gameViewController, animated: true)
             
         }
         

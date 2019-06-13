@@ -8,15 +8,12 @@
 
 import UIKit
 
-class ConstructionChaosViewController: UINavigationController {
+class ConstructionChaosNavigationController: UINavigationController {
 
     override func viewDidLoad() {
             super.viewDidLoad()
             
-//            NotificationCenter.default.addObserver(self,
-//                                                   selector: #selector(showAuthenticationViewController),
-//                                                   name: NSNotification.Name(GameKitHelper.PresentAuthenticationViewController),
-//                                                   object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(showAuthenticationViewController), name: NSNotification.Name(GameKitHelper)
 //
 //            GameKitHelper.sharedInstance.authenticateLocalPlayer()
         }
