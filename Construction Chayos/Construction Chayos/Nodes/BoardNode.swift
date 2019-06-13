@@ -12,10 +12,10 @@ class BoardNode: SKSpriteNode, EventListenerNode {
        
         let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
-        
+
         physicsBody!.categoryBitMask = PhysicsCategory.Board
         physicsBody!.collisionBitMask = PhysicsCategory.None
-        
+
     }
     
     func interact() {

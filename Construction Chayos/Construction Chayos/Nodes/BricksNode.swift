@@ -32,6 +32,8 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             
             position.x = location.x
             
+
+            
             print("H Bricks Moves")
         }
         

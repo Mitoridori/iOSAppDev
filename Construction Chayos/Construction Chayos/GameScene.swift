@@ -29,18 +29,11 @@ struct PhysicsCategory {
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
+   
     
     var playable = true
     
     override func didMove(to view: SKView) {
-        
-        // Calculate playable margin
-   //     let maxAspectRatio: CGFloat = 16.0/9.0
- //       let maxAspectRatioHeight = size.width / maxAspectRatio
- //       let playableMargin: CGFloat = (size.height - maxAspectRatioHeight)/2
-        
-//        let playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: size.height-playableMargin*2)
-//        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         
         //Physic items
         physicsWorld.contactDelegate = self
@@ -54,17 +47,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         playerNode = childNode(withName: "Player") as? PlayerNode
         
+    }
+    
+    func newGame() {
+        let scene = SKScene(fileNamed: "LevelOne")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFill
+        view!.presentScene(scene)
+        //view!.presentScene(SKScene(fileNamed: "LevelOne"))
         
- 
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let positionInScene = touch!.location(in: self)
+        let touchedNode = self.atPoint(positionInScene)
+        if let name = touchedNode.name {
+            if name == "Reset" {
+                newGame()
+            }
+        }
+        
+    }
+    
+    
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesEnded(touches, with: event)
+//        print ("touch over")
+//    }
     
 
-    
- 
-    
-    
     
 }
 
