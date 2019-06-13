@@ -14,7 +14,7 @@
         <scene sceneID="nv2-sg-1ac">
             <objects>
                 <navigationController id="rde-8E-h4u" customClass="ConstructionChaosNavigationController" customModule="Construction_Chayos" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSb-lc-geC">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSb-lc-geC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
