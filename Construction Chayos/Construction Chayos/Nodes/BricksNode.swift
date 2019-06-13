@@ -19,8 +19,8 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     }
     
     func interact() {
-        gameScene?.TotalMoves += 1
-        print("message Sent")
+//        gameScene?.TotalMoves += 1
+//        print("message Sent",  gameScene?.TotalMoves)
     }
     
     
@@ -42,8 +42,12 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-
+        gameScene?.TotalMoves = gameScene!.TotalMoves + 1
+        print("message Sent",  gameScene?.TotalMoves)
         interact()
     }
+    
+
+    
     
 }

@@ -29,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
     var Moves: SKLabelNode!
+    var Brick: SKSpriteNode!
     
     var bricksNode: BricksNode!
     var vbrickNode: VBrickNode!
@@ -48,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         playerNode = childNode(withName: "Player") as? PlayerNode
         Moves = self.childNode(withName: "Moves") as? SKLabelNode
+        Brick = self.childNode(withName: "Brick") as! SKSpriteNode
     }
     
     
@@ -62,7 +64,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } 
     }
     
-
+    var velocity = CGPoint.zero
+    var lastTouchLocation: CGPoint?
+    var brickSpeed: CGFloat = 100
+    
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
             dt = currentTime - lastUpdateTime
@@ -70,8 +75,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
-        //counter()
+        let dt = CGFloat(currentTime - lastUpdateTime)
+        if let lastTouchLocation = lastTouchLocation {
+            let diff = lastTouchLocation - Brick.position
+            if diff.length() <= brickSpeed * CGFloat(dt) {
+                Brick.position = lastTouchLocation
+                velocity = CGPoint.zero
+            } else {
+              bricksNode.position = CGPoint(x: Brick.position.x + position.x + (position.x - Brick.position.x) * brickSpeed * dt, y: Brick.position.x + (position.y - Brick.position.y) * brickSpeed * dt)
+            }
+        }
+        counter()
     }
+    
     
     
     func newGame() {
@@ -94,11 +110,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func getTotalMoves(){
         
-        
+
     }
+    
     func counter(){
-       print(TotalMoves)
-//        Moves.text = "Moves: \(TotalMoves)"
+       
+        if TotalMoves == 0{
+            //print ("No Change")
+        }else{
+            //Moves.text = "Moves: \(TotalMoves)"
+            print(TotalMoves)
+        }
     }
 
     

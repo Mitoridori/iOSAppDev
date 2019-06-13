@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    var levelOne: LevelOne
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
