@@ -10,11 +10,9 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
-    var levelOne: LevelOne
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "LevelOne") {
@@ -24,7 +22,7 @@ class GameViewController: UIViewController {
                 // Present the scene
                 view.presentScene(scene)
             }
-            
+        
             view.showsPhysics = true
             view.ignoresSiblingOrder = false
             
