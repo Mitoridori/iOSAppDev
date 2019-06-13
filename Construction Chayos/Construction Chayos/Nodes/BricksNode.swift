@@ -9,7 +9,8 @@
 import SpriteKit
 
 class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
-
+    var gameScene:GameScene?
+  
     func didMoveToScene() {
         isUserInteractionEnabled = true
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
@@ -18,7 +19,8 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     }
     
     func interact() {
-    
+        gameScene?.TotalMoves += 1
+        print("message Sent")
     }
     
     
@@ -31,17 +33,17 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             let location = touch.location(in: self)
             
             position.x = location.x
-            
-
-            
-            print("H Bricks Moves")
+ 
+            //print("H Bricks Moves")
         }
         
     }
     
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print ("touch over")
+
+        interact()
     }
     
 }

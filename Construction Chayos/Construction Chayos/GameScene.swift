@@ -20,24 +20,25 @@ struct PhysicsCategory {
     static let None:  UInt32 = 0 << 0
     static let Player:   UInt32 = 1 << 1
     static let Brick: UInt32 = 1 << 2
-    static let Board:   UInt32 = 1 << 4
-    static let Edge:  UInt32 = 1 << 6
     static let VBrick: UInt32 = 1 << 3
+    static let Board:   UInt32 = 1 << 4
 }
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
-   
+    var Moves: SKLabelNode!
     
-    var playable = true
+    var bricksNode: BricksNode!
+    var vbrickNode: VBrickNode!
+
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
+    var TotalMoves = 0
     
     override func didMove(to view: SKView) {
-        
-        //Physic items
-        physicsWorld.contactDelegate = self
-        physicsBody!.categoryBitMask = PhysicsCategory.Edge
+         physicsWorld.contactDelegate = self
         
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
@@ -46,18 +47,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         
         playerNode = childNode(withName: "Player") as? PlayerNode
-        
+        Moves = self.childNode(withName: "Moves") as? SKLabelNode
     }
+    
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.Board | PhysicsCategory.VBrick {
+            print ("V brick and board edge collision")
+            }
+        else if collision == PhysicsCategory.Board | PhysicsCategory.Brick {
+            print ("Brick and board edge collision")
+        } 
+    }
+    
+
+    override func update(_ currentTime: TimeInterval) {
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        } else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        //counter()
+    }
+    
     
     func newGame() {
         let scene = SKScene(fileNamed: "LevelOne")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFill
         view!.presentScene(scene)
-        //view!.presentScene(SKScene(fileNamed: "LevelOne"))
-        
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
@@ -68,15 +90,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 newGame()
             }
         }
+    }
+
+    func getTotalMoves(){
+        
         
     }
-    
-    
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesEnded(touches, with: event)
-//        print ("touch over")
-//    }
-    
+    func counter(){
+       print(TotalMoves)
+//        Moves.text = "Moves: \(TotalMoves)"
+    }
 
     
 }

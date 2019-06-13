@@ -27,11 +27,19 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             position.y = touchLocation.y
         }
 
+        
+        
+
     }
 
+    public var MovesTakenV = 0
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print ("touch over")
+        MovesTakenV = MovesTakenV + 1
+        print(MovesTakenV)
     }
 
+    
+    
+    
 }

@@ -34,10 +34,12 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
         print("truck Moves")
         }
     }
-    
+    public var MovesTakenP = 0
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print ("touch over")
+        MovesTakenP = MovesTakenP + 1
+        print(MovesTakenP)
     }
     
+
 }
