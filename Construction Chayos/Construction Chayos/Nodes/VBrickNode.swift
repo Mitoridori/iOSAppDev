@@ -9,11 +9,12 @@
 import SpriteKit
 
 class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
+        var gameScene:GameScene?
     
     func didMoveToScene() {
         isUserInteractionEnabled = true
-        physicsBody!.categoryBitMask = PhysicsCategory.VBrick
-        physicsBody!.collisionBitMask = PhysicsCategory.Player; PhysicsCategory.VBrick; PhysicsCategory.Brick
+        physicsBody!.categoryBitMask = PhysicsCategory.Brick
+        physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
     }
     
     func interact() {
@@ -45,6 +46,13 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 //
         }
         
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        gameScene?.TotalMoves = gameScene!.TotalMoves + 1
+        print("message Sent",  gameScene?.TotalMoves)
+        interact()
     }
     
     

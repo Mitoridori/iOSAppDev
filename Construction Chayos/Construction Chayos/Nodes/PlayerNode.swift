@@ -9,10 +9,12 @@
 import SpriteKit
 
 class PlayerNode: SKSpriteNode, EventListenerNode {
+        var gameScene:GameScene?
+    
     func didMoveToScene() {
         isUserInteractionEnabled = true
         physicsBody!.categoryBitMask = PhysicsCategory.Player
-        physicsBody!.collisionBitMask = PhysicsCategory.Brick; PhysicsCategory.VBrick
+        physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Board
     }
     
     func interact() {
@@ -40,11 +42,11 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
     }
     
     
-    public var MovesTakenP = 0
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        MovesTakenP = MovesTakenP + 1
-        print(MovesTakenP)
+        gameScene?.TotalMoves = gameScene!.TotalMoves + 1
+        print("message Sent",  gameScene?.TotalMoves)
+        interact()
     }
     
 
