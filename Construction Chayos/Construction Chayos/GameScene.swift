@@ -68,6 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastTouchLocation: CGPoint?
     var brickSpeed: CGFloat = 100
     
+    
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
             dt = currentTime - lastUpdateTime
@@ -75,16 +76,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
-        let dt = CGFloat(currentTime - lastUpdateTime)
-        if let lastTouchLocation = lastTouchLocation {
-            let diff = lastTouchLocation - Brick.position
-            if diff.length() <= brickSpeed * CGFloat(dt) {
-                Brick.position = lastTouchLocation
-                velocity = CGPoint.zero
-            } else {
-              bricksNode.position = CGPoint(x: Brick.position.x + position.x + (position.x - Brick.position.x) * brickSpeed * dt, y: Brick.position.x + (position.y - Brick.position.y) * brickSpeed * dt)
-            }
-        }
+        
+        
+        
+        
+        
+        
+//        let dt = CGFloat(currentTime - lastUpdateTime)
+//        if let lastTouchLocation = lastTouchLocation {
+//            let diff = lastTouchLocation - Brick.position
+//            if diff.length() <= brickSpeed * CGFloat(dt) {
+//                Brick.position = lastTouchLocation
+//                velocity = CGPoint.zero
+//            } else {
+//              bricksNode.position = CGPoint(x: Brick.position.x + position.x + (position.x - Brick.position.x) * brickSpeed * dt, y: Brick.position.x + (position.y - Brick.position.y) * brickSpeed * dt)
+//            }
+//        }
         counter()
     }
     

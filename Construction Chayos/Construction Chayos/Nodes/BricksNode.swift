@@ -15,6 +15,7 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         isUserInteractionEnabled = true
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
         physicsBody!.collisionBitMask = PhysicsCategory.Player; PhysicsCategory.VBrick; PhysicsCategory.Brick
+        physicsBody!.contactTestBitMask = PhysicsCategory.Board
         
     }
     
@@ -32,9 +33,12 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         for touch in touches {
             let location = touch.location(in: self)
             
-            position.x = location.x
- 
-            //print("H Bricks Moves")
+            let previousLocation = touch.previousLocation(in: self)
+
+            var brickX = position.x + (location.x - previousLocation.x)
+
+            position = CGPoint(x: brickX, y: position.y)
+
         }
         
     }

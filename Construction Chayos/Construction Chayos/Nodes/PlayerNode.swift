@@ -27,13 +27,19 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
             return
         }
         for touch in touches {
-        let location = touch.location(in: self)
-        
-        position.x = location.x
-        
-        print("truck Moves")
+            let location = touch.location(in: self)
+            
+            let previousLocation = touch.previousLocation(in: self)
+            
+            let brickX = position.x + (location.x - previousLocation.x)
+            
+            position = CGPoint(x: brickX, y: position.y)
+            
         }
+        
     }
+    
+    
     public var MovesTakenP = 0
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)

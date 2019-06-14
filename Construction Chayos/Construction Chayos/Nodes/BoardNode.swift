@@ -14,7 +14,9 @@ class BoardNode: SKSpriteNode, EventListenerNode {
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
 
         physicsBody!.categoryBitMask = PhysicsCategory.Board
-        physicsBody!.collisionBitMask = PhysicsCategory.None
+        physicsBody!.collisionBitMask = PhysicsCategory.Brick
+        
+        physicsBody!.contactTestBitMask = PhysicsCategory.Brick
 
     }
     

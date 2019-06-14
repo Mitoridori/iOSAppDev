@@ -22,46 +22,30 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-         super.touchesMoved(touches, with: event)
-        if let touch = touches.first {
-            let touchLocation = touch.location(in: self)
-            position.y = touchLocation.y
+        super.touchesMoved(touches, with: event)
+        guard touches.first != nil else {
+            return
         }
-
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            let previousLocation = touch.previousLocation(in: self)
+            
+            let brickY = position.y + (location.y - previousLocation.y)
+            
+            position = CGPoint(x: position.x, y: brickY)
+            
+           // position.y = location.y
+            
+//            if location.y > 0{
+//                run(SKAction.moveBy(x: 0, y: 1, duration: 0.1))
+//            }else{
+//                run(SKAction.moveBy(x: 0, y: -1, duration: 0.1))
+//            }
+//
+        }
+        
     }
-//    var lastTouchTime = Date.timeIntervalSinceReferenceDate
-//    var lastTouchPosition = CGPoint.zero
-//
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesMoved(touches, with: event)
-//        let currentTime = Date().timeIntervalSinceReferenceDate
-//        let timeDelta = currentTime - lastTouchTime
-//
-//
-//        for touch in touches{
-//            removeAction(forKey: "TouchPrediction")
-//
-//            let oldPosition = lastTouchPosition
-//            let positionInScreen = touch.location(in: self)
-//            lastTouchPosition = positionInScreen
-//
-//            position.y = positionInScreen.y
-//
-//
-//            //Calculate the difference between the sprite's last position and its current position,
-//            //and use it to predict the sprite's position next frame.
-//            let positionDelta = CGPoint(x: positionInScreen.x, y: positionInScreen.y - oldPosition.y)
-//            let predictedPosition = CGPoint(x: positionInScreen.x, y: positionInScreen.y + positionDelta.y)
-//
-//            //Multiply the timeDelta by 1.5.  This helps to smooth out the lag,
-//            //but making this number too high cause the animation to be ineffective.
-//            run(SKAction.move(to: predictedPosition, duration: timeDelta * 1.5), withKey: "TouchPrediction")
-//        }
-//
-//
-//        lastTouchTime = Date().timeIntervalSinceReferenceDate
-//    }
-//
     
     
 }
