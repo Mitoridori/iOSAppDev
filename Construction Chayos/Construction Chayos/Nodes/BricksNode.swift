@@ -13,13 +13,15 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
   
     func didMoveToScene() {
         isUserInteractionEnabled = true
+
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
-        physicsBody!.collisionBitMask = PhysicsCategory.Player; PhysicsCategory.VBrick; PhysicsCategory.Brick
+        physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
         physicsBody!.contactTestBitMask = PhysicsCategory.Board
         
     }
     
     func interact() {
+        
 //        gameScene?.TotalMoves += 1
 //        print("message Sent",  gameScene?.TotalMoves)
     }

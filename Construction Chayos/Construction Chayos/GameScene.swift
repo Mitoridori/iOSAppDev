@@ -17,11 +17,11 @@ protocol InteractiveNode {
 }
 
 struct PhysicsCategory {
-    static let None:  UInt32 = 0 << 0
+    static let None:     UInt32 = 0 << 0
     static let Player:   UInt32 = 1 << 1
-    static let Brick: UInt32 = 1 << 2
-    static let VBrick: UInt32 = 1 << 3
-    static let Board:   UInt32 = 1 << 4
+    static let Brick:    UInt32 = 1 << 2
+    //static let VBrick: UInt32 = 1 << 3
+    static let Board:    UInt32 = 1 << 4
 }
 
 
@@ -41,6 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
          physicsWorld.contactDelegate = self
         
+
+        
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -54,9 +56,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func didBegin(_ contact: SKPhysicsContact) {
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        if collision == PhysicsCategory.Board | PhysicsCategory.VBrick {
+        if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
             print ("V brick and board edge collision")
             }
         else if collision == PhysicsCategory.Board | PhysicsCategory.Brick {
@@ -77,21 +80,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         lastUpdateTime = currentTime
         
-        
-        
-        
-        
-        
-//        let dt = CGFloat(currentTime - lastUpdateTime)
-//        if let lastTouchLocation = lastTouchLocation {
-//            let diff = lastTouchLocation - Brick.position
-//            if diff.length() <= brickSpeed * CGFloat(dt) {
-//                Brick.position = lastTouchLocation
-//                velocity = CGPoint.zero
-//            } else {
-//              bricksNode.position = CGPoint(x: Brick.position.x + position.x + (position.x - Brick.position.x) * brickSpeed * dt, y: Brick.position.x + (position.y - Brick.position.y) * brickSpeed * dt)
-//            }
-//        }
         counter()
     }
     
