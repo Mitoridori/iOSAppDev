@@ -59,12 +59,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
+        if collision == PhysicsCategory.Player | PhysicsCategory.Board {
+            print("SUCCESS")}
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
-            print ("V brick and board edge collision")}
-        else if collision == PhysicsCategory.Board | PhysicsCategory.Brick {
-            print ("Brick and board edge collision") }
-        else if collision == PhysicsCategory.Board | PhysicsCategory.Player {
-                print("SUCCESS")}
+            print ("Brick and board edge collision")}
+        if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
+            print ("Bricks have collision") }
+
     }
     
     var velocity = CGPoint.zero
@@ -79,6 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
+        
         
         counter()
     }

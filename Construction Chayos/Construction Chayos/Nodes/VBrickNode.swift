@@ -16,6 +16,10 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         isUserInteractionEnabled = true
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
         physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
+        physicsBody!.contactTestBitMask = PhysicsCategory.Brick | PhysicsCategory.Board
+        dynBrick = false
+        dynamicBrick()
+        
     }
     
     func interact() {
@@ -24,7 +28,7 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dynBrick = true
-        
+        dynamicBrick()
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,15 +44,6 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             let brickY = position.y + (location.y - previousLocation.y)
             
             position = CGPoint(x: position.x, y: brickY)
-            
-           // position.y = location.y
-            
-//            if location.y > 0{
-//                run(SKAction.moveBy(x: 0, y: 1, duration: 0.1))
-//            }else{
-//                run(SKAction.moveBy(x: 0, y: -1, duration: 0.1))
-//            }
-//
         }
         
     }
@@ -56,6 +51,7 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         dynBrick = false
+        dynamicBrick()
         gameScene?.TotalMoves = gameScene!.TotalMoves + 1
         print("message Sent",  gameScene?.TotalMoves)
         interact()
