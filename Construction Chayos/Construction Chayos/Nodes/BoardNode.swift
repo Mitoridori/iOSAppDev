@@ -16,7 +16,7 @@ class BoardNode: SKSpriteNode, EventListenerNode {
         parent!.physicsBody!.categoryBitMask = PhysicsCategory.Board
         parent!.physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Player
         
-        //parent!.physicsBody!.contactTestBitMask = PhysicsCategory.Brick
+        parent!.physicsBody!.contactTestBitMask = PhysicsCategory.Brick
 
     }
     

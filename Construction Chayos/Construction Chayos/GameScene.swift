@@ -60,11 +60,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
-            print ("V brick and board edge collision")
-            }
+            print ("V brick and board edge collision")}
         else if collision == PhysicsCategory.Board | PhysicsCategory.Brick {
-            print ("Brick and board edge collision")
-        } 
+            print ("Brick and board edge collision") }
+        else if collision == PhysicsCategory.Board | PhysicsCategory.Player {
+                print("SUCCESS")}
     }
     
     var velocity = CGPoint.zero

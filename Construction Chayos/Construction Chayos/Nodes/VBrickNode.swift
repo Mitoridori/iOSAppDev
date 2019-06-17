@@ -10,6 +10,7 @@ import SpriteKit
 
 class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         var gameScene:GameScene?
+        var dynBrick = false
     
     func didMoveToScene() {
         isUserInteractionEnabled = true
@@ -21,6 +22,10 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dynBrick = true
+        
+    }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
@@ -50,10 +55,18 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        dynBrick = false
         gameScene?.TotalMoves = gameScene!.TotalMoves + 1
         print("message Sent",  gameScene?.TotalMoves)
         interact()
     }
     
-    
+    func dynamicBrick(){
+        if dynBrick == true{
+            physicsBody?.pinned = false
+        }
+        else if dynBrick == false {
+            physicsBody?.pinned = true
+        }
+    }
 }
