@@ -19,8 +19,9 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
         physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
-        physicsBody!.contactTestBitMask = PhysicsCategory.Board
+        physicsBody!.contactTestBitMask = PhysicsCategory.Board | PhysicsCategory.Brick
         dynBrick = false
+        dynamicBrick()
         
     }
     
@@ -32,6 +33,7 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dynBrick = true
+        dynamicBrick()
         
     }
     
@@ -57,6 +59,7 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         dynBrick = false
+        dynamicBrick()
         gameScene?.TotalMoves = gameScene!.TotalMoves + 1
         print("message Sent",  gameScene?.TotalMoves)
         interact()
@@ -65,10 +68,10 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
 
     func dynamicBrick(){
         if dynBrick == true{
-            physicsBody?.pinned = false
+            physicsBody?.pinned = false // can move
         }
         else if dynBrick == false {
-            physicsBody?.pinned = true
+            physicsBody?.pinned = true //can not move
         }
         
         
