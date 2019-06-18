@@ -32,6 +32,8 @@ class WonLevelViewController: UIViewController {
         }
         
     }
-    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
 }

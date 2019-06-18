@@ -28,7 +28,6 @@ struct PhysicsCategory {
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
-    var Moves: SKLabelNode!
     var Brick: SKSpriteNode!
     
     var bricksNode: BricksNode!
@@ -37,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var TotalMoves = 0
+    var movesMade: SKLabelNode?
     
     override func didMove(to view: SKView) {
          physicsWorld.contactDelegate = self
@@ -50,8 +50,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         
         playerNode = childNode(withName: "Player") as? PlayerNode
-        Moves = self.childNode(withName: "Moves") as? SKLabelNode
         Brick = self.childNode(withName: "Brick") as! SKSpriteNode
+        movesMade = childNode(withName: "moves") as? SKLabelNode
+        
     }
     
     
@@ -108,6 +109,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let name = touchedNode.name {
             if name == "Reset" {
                 newGame()
+                TotalMoves = 0
+            }
+            else if name == "LevelSelect" {
+                
             }
         }
     }
@@ -119,12 +124,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func counter(){
        
-        if TotalMoves == 0{
-            //print ("No Change")
-        }else{
-            //Moves.text = "Moves: \(TotalMoves)"
-            print(TotalMoves)
-        }
+        movesMade?.text = "\(TotalMoves)"
+        
     }
 
     
