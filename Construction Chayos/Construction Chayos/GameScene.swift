@@ -60,6 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Player | PhysicsCategory.Board {
+            didWin()
             print("SUCCESS")}
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
             print ("Brick and board edge collision")}
@@ -90,6 +91,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
+    }
+    
+    func didWin() {
+        let scene = SKScene(fileNamed: "WinScreen")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFit
+        view!.presentScene(scene)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
