@@ -79,7 +79,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
-        
         counter()
     }
     
@@ -88,7 +87,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func newGame() {
         let scene = SKScene(fileNamed: "LevelOne")
         scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFill
+        scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
     }
     

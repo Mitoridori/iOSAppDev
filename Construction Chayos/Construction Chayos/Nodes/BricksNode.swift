@@ -11,6 +11,8 @@ import SpriteKit
 class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
     var gameScene:GameScene?
     var dynBrick = false
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
   
     func didMoveToScene() {
         isUserInteractionEnabled = true
@@ -70,6 +72,16 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         }
         
         
+    }
+    
+    func update(_ currentTime: TimeInterval) {
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        } else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        dynamicBrick()
     }
     
 }

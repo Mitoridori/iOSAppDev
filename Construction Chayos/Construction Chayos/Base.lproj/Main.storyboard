@@ -184,13 +184,13 @@
                                     <constraint firstAttribute="width" secondItem="KGM-7a-0eL" secondAttribute="height" multiplier="5:11" id="WQu-va-iwE"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Windows_08" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQP-f3-2VX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Windows_08" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQP-f3-2VX">
                                 <rect key="frame" x="0.0" y="168" width="375" height="540"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hQP-f3-2VX" secondAttribute="height" multiplier="375:614" id="dUA-RC-aHj"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-1Y-MT9">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-1Y-MT9">
                                 <rect key="frame" x="73" y="280" width="57" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9o1-1Y-MT9" secondAttribute="height" multiplier="57:56" id="Qws-g9-1Zc"/>
@@ -218,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUZ-fQ-j48">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUZ-fQ-j48">
                                 <rect key="frame" x="159" y="280" width="57" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LUZ-fQ-j48" secondAttribute="height" multiplier="57:56" id="SC1-Vy-P0X"/>
@@ -227,15 +227,15 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz5-AI-fBh">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz5-AI-fBh">
                                 <rect key="frame" x="248.99999999999997" y="280" width="70.666666666666657" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kz5-AI-fBh" secondAttribute="height" multiplier="57:56" id="QV2-WN-12V"/>
                                 </constraints>
                                 <state key="normal" image="Button_13"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Hw-9x-uyr">
-                                <rect key="frame" x="108" y="187" width="160" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Hw-9x-uyr">
+                                <rect key="frame" x="107" y="199" width="160" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Hw-9x-uyr" secondAttribute="height" multiplier="160:31" id="ED2-L2-y7D"/>
                                 </constraints>
