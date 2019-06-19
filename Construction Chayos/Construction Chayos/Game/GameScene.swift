@@ -112,8 +112,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 TotalMoves = 0
             }
             else if name == "LevelSelect" {
-
-            }
+                
+                }
             else if name == "Quit"{
                     newGame()
                     TotalMoves = 0            }

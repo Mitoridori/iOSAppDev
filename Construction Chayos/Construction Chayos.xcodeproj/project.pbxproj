@@ -10,6 +10,9 @@
 		6005EC6222B95B5700DFC666 /* WonLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005EC6122B95B5700DFC666 /* WonLevelViewController.swift */; };
 		600689B222B81CC200235DD2 /* WinScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 600689B122B81CC200235DD2 /* WinScreen.sks */; };
 		6008F33B22B2CE9E00D0974B /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008F33A22B2CE9E00D0974B /* HomeScreenViewController.swift */; };
+		6009A03E22BAA7EE00F206A0 /* MainScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009A03D22BAA7EE00F206A0 /* MainScreen.sks */; };
+		6009A04022BAA80600F206A0 /* LevelSelect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009A03F22BAA80600F206A0 /* LevelSelect.sks */; };
+		6009A04222BAAA8E00F206A0 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009A04122BAAA8E00F206A0 /* MainScreen.swift */; };
 		6009E0EB22A984530034FFC7 /* LevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0EA22A984530034FFC7 /* LevelSelector.swift */; };
 		6009E0F122A98B5C0034FFC7 /* Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0F022A98B5C0034FFC7 /* Collisions.swift */; };
 		6009E0F322A994F50034FFC7 /* BottomUI.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0F222A994F50034FFC7 /* BottomUI.sks */; };
@@ -21,7 +24,6 @@
 		6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* LevelThree.sks */; };
 		60F7887422B17ED700E138F8 /* ConstructionChaosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7887322B17ED700E138F8 /* ConstructionChaosViewController.swift */; };
 		60F7887622B1888C00E138F8 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7887522B1888C00E138F8 /* LevelSelectViewController.swift */; };
-		DF091C0F22ADCDD700F3A4CB /* levelOneone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF091C0E22ADCDD700F3A4CB /* levelOneone.swift */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -71,6 +73,9 @@
 		6005EC6122B95B5700DFC666 /* WonLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLevelViewController.swift; sourceTree = "<group>"; };
 		600689B122B81CC200235DD2 /* WinScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinScreen.sks; sourceTree = "<group>"; };
 		6008F33A22B2CE9E00D0974B /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		6009A03D22BAA7EE00F206A0 /* MainScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScreen.sks; sourceTree = "<group>"; };
+		6009A03F22BAA80600F206A0 /* LevelSelect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelect.sks; sourceTree = "<group>"; };
+		6009A04122BAAA8E00F206A0 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		6009E0EA22A984530034FFC7 /* LevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelector.swift; sourceTree = "<group>"; };
 		6009E0F022A98B5C0034FFC7 /* Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collisions.swift; sourceTree = "<group>"; };
 		6009E0F222A994F50034FFC7 /* BottomUI.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BottomUI.sks; sourceTree = "<group>"; };
@@ -82,7 +87,6 @@
 		6009E10422A99C8B0034FFC7 /* LevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThree.sks; sourceTree = "<group>"; };
 		60F7887322B17ED700E138F8 /* ConstructionChaosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionChaosViewController.swift; sourceTree = "<group>"; };
 		60F7887522B1888C00E138F8 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectViewController.swift; sourceTree = "<group>"; };
-		DF091C0E22ADCDD700F3A4CB /* levelOneone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = levelOneone.swift; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -142,6 +146,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6009A04522BAB05B00F206A0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				6009A04122BAAA8E00F206A0 /* MainScreen.swift */,
+				6009E0EA22A984530034FFC7 /* LevelSelector.swift */,
+				DF0AABB222A1A56D00C40685 /* GameScene.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		60F7887222B17E4700E138F8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +191,7 @@
 		DF0AABAB22A1A56D00C40685 /* Construction Chayos */ = {
 			isa = PBXGroup;
 			children = (
+				6009A04522BAB05B00F206A0 /* Game */,
 				DF15F30522B1ECF1000E6AFF /* SKTUtils */,
 				60F7887222B17E4700E138F8 /* ViewControllers */,
 				DFFEED7522B028750008A76D /* Nodes */,
@@ -184,13 +199,10 @@
 				DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */,
 				6009E0F022A98B5C0034FFC7 /* Collisions.swift */,
 				DF0AABB022A1A56D00C40685 /* Actions.sks */,
-				DF0AABB222A1A56D00C40685 /* GameScene.swift */,
 				DF0AABB622A1A56D00C40685 /* Main.storyboard */,
 				DF0AABB922A1A56E00C40685 /* Assets.xcassets */,
 				DF0AABBB22A1A56E00C40685 /* LaunchScreen.storyboard */,
 				DF0AABBE22A1A56E00C40685 /* Info.plist */,
-				6009E0EA22A984530034FFC7 /* LevelSelector.swift */,
-				DF091C0E22ADCDD700F3A4CB /* levelOneone.swift */,
 				DFFEED7322B027100008A76D /* titleScreen.swift */,
 			);
 			path = "Construction Chayos";
@@ -244,6 +256,8 @@
 				6009E10222A99C720034FFC7 /* LevelTwo.sks */,
 				6009E10422A99C8B0034FFC7 /* LevelThree.sks */,
 				600689B122B81CC200235DD2 /* WinScreen.sks */,
+				6009A03D22BAA7EE00F206A0 /* MainScreen.sks */,
+				6009A03F22BAA80600F206A0 /* LevelSelect.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -371,9 +385,11 @@
 				6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */,
 				6009E0F522A9950E0034FFC7 /* TopUI.sks in Resources */,
 				6009E0F322A994F50034FFC7 /* BottomUI.sks in Resources */,
+				6009A03E22BAA7EE00F206A0 /* MainScreen.sks in Resources */,
 				6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */,
 				600689B222B81CC200235DD2 /* WinScreen.sks in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
+				6009A04022BAA80600F206A0 /* LevelSelect.sks in Resources */,
 				6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +423,7 @@
 				6008F33B22B2CE9E00D0974B /* HomeScreenViewController.swift in Sources */,
 				6009E0EB22A984530034FFC7 /* LevelSelector.swift in Sources */,
 				DF0AABB522A1A56D00C40685 /* GameViewController.swift in Sources */,
+				6009A04222BAAA8E00F206A0 /* MainScreen.swift in Sources */,
 				DF15F31722B1ECF1000E6AFF /* SKAction+SpecialEffects.swift in Sources */,
 				6009E0FB22A995B50034FFC7 /* PlayerNode.swift in Sources */,
 				60F7887422B17ED700E138F8 /* ConstructionChaosViewController.swift in Sources */,
@@ -418,7 +435,6 @@
 				DF15F31A22B1ECF1000E6AFF /* SKTEffects.swift in Sources */,
 				DF15F31822B1ECF1000E6AFF /* SKNode+Extensions.swift in Sources */,
 				DF15F31222B1ECF1000E6AFF /* SKColor+Extensions.swift in Sources */,
-				DF091C0F22ADCDD700F3A4CB /* levelOneone.swift in Sources */,
 				DF15F31322B1ECF1000E6AFF /* CGVector+Extensions.swift in Sources */,
 				DF15F31922B1ECF1000E6AFF /* CGPoint+Extensions.swift in Sources */,
 				DFF9D66222B08D3900228A57 /* VBrickNode.swift in Sources */,
