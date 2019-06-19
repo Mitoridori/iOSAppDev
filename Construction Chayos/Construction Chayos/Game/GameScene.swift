@@ -88,10 +88,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func newGame() {
-        let scene = SKScene(fileNamed: "LevelOne")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+        view!.presentScene(GameScene.level(levelNum: currentLevel))
+//        let scene = SKScene(fileNamed: "LevelOne")
+//        scene?.size = CGSize(width: size.width, height: size.height)
+//        scene?.scaleMode = .aspectFit
+//        view!.presentScene(scene)
     }
     
     func didWin() {
@@ -99,6 +100,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
+        
+        if currentLevel < 3 {
+            currentLevel += 1
+        }
         
     }
     
@@ -130,6 +135,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         movesMade?.text = "\(TotalMoves)"
         
     }
+    
+    var currentLevel: Int = 0
+    class func level(levelNum: Int) -> GameScene? {
+        let scene = GameScene(fileNamed: "Level\(levelNum)")!
+        scene.currentLevel = levelNum
+        scene.scaleMode = .aspectFill
+        return scene
+    }
+    
 
     
 }
