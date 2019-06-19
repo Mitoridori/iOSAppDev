@@ -16,9 +16,9 @@
 		6009E0F522A9950E0034FFC7 /* TopUI.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0F422A9950E0034FFC7 /* TopUI.sks */; };
 		6009E0FB22A995B50034FFC7 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009E0FA22A995B50034FFC7 /* PlayerNode.swift */; };
 		6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E0FE22A999E20034FFC7 /* GameBoard.sks */; };
-		6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10022A99C510034FFC7 /* LevelOne.sks */; };
-		6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* LevelTwo.sks */; };
-		6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* LevelThree.sks */; };
+		6009E10122A99C510034FFC7 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10022A99C510034FFC7 /* Level1.sks */; };
+		6009E10322A99C720034FFC7 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* Level2.sks */; };
+		6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* Level3.sks */; };
 		60F7887422B17ED700E138F8 /* ConstructionChaosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7887322B17ED700E138F8 /* ConstructionChaosViewController.swift */; };
 		60F7887622B1888C00E138F8 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7887522B1888C00E138F8 /* LevelSelectViewController.swift */; };
 		DF091C0F22ADCDD700F3A4CB /* levelOneone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF091C0E22ADCDD700F3A4CB /* levelOneone.swift */; };
@@ -77,9 +77,9 @@
 		6009E0F422A9950E0034FFC7 /* TopUI.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TopUI.sks; sourceTree = "<group>"; };
 		6009E0FA22A995B50034FFC7 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 		6009E0FE22A999E20034FFC7 /* GameBoard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameBoard.sks; sourceTree = "<group>"; };
-		6009E10022A99C510034FFC7 /* LevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelOne.sks; sourceTree = "<group>"; };
-		6009E10222A99C720034FFC7 /* LevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTwo.sks; sourceTree = "<group>"; };
-		6009E10422A99C8B0034FFC7 /* LevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThree.sks; sourceTree = "<group>"; };
+		6009E10022A99C510034FFC7 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		6009E10222A99C720034FFC7 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		6009E10422A99C8B0034FFC7 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		60F7887322B17ED700E138F8 /* ConstructionChaosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionChaosViewController.swift; sourceTree = "<group>"; };
 		60F7887522B1888C00E138F8 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectViewController.swift; sourceTree = "<group>"; };
 		DF091C0E22ADCDD700F3A4CB /* levelOneone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = levelOneone.swift; sourceTree = "<group>"; };
@@ -240,9 +240,9 @@
 				6009E0F222A994F50034FFC7 /* BottomUI.sks */,
 				6009E0F422A9950E0034FFC7 /* TopUI.sks */,
 				6009E0FE22A999E20034FFC7 /* GameBoard.sks */,
-				6009E10022A99C510034FFC7 /* LevelOne.sks */,
-				6009E10222A99C720034FFC7 /* LevelTwo.sks */,
-				6009E10422A99C8B0034FFC7 /* LevelThree.sks */,
+				6009E10022A99C510034FFC7 /* Level1.sks */,
+				6009E10222A99C720034FFC7 /* Level2.sks */,
+				6009E10422A99C8B0034FFC7 /* Level3.sks */,
 				600689B122B81CC200235DD2 /* WinScreen.sks */,
 			);
 			path = Scenes;
@@ -366,15 +366,15 @@
 				DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */,
 				DF0AABB822A1A56D00C40685 /* Main.storyboard in Resources */,
 				DF0AABBA22A1A56E00C40685 /* Assets.xcassets in Resources */,
-				6009E10522A99C8B0034FFC7 /* LevelThree.sks in Resources */,
+				6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */,
 				DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */,
-				6009E10122A99C510034FFC7 /* LevelOne.sks in Resources */,
+				6009E10122A99C510034FFC7 /* Level1.sks in Resources */,
 				6009E0F522A9950E0034FFC7 /* TopUI.sks in Resources */,
 				6009E0F322A994F50034FFC7 /* BottomUI.sks in Resources */,
 				6009E0FF22A999E20034FFC7 /* GameBoard.sks in Resources */,
 				600689B222B81CC200235DD2 /* WinScreen.sks in Resources */,
 				DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */,
-				6009E10322A99C720034FFC7 /* LevelTwo.sks in Resources */,
+				6009E10322A99C720034FFC7 /* Level2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
