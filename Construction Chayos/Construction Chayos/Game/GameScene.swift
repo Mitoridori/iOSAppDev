@@ -37,6 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var dt: TimeInterval = 0
     var TotalMoves = 0
     var movesMade: SKLabelNode?
+    var currentLevel: Int = 1
     
     override func didMove(to view: SKView) {
          physicsWorld.contactDelegate = self
@@ -96,15 +97,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didWin() {
+        print (currentLevel)
+        
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
-        
-        if currentLevel < 3 {
+
+    }
+    func nextLevel(){
+            print (currentLevel)
+        if currentLevel <= 3 {
             currentLevel += 1
+            print (currentLevel)
         }
-        
+        //Make confetiee
+        run(SKAction.afterDelay(0, runBlock: newGame))
+    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -120,8 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 }
             else if name == "Quit"{
-                    newGame()
-                    TotalMoves = 0            }
+                nextLevel()}
         }
     }
 
@@ -136,11 +144,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    var currentLevel: Int = 0
+    
     class func level(levelNum: Int) -> GameScene? {
         let scene = GameScene(fileNamed: "Level\(levelNum)")!
         scene.currentLevel = levelNum
-        scene.scaleMode = .aspectFill
+        scene.scaleMode = .aspectFit
         return scene
     }
     
