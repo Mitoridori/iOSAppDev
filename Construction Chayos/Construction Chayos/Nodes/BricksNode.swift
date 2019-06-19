@@ -9,10 +9,10 @@
 import SpriteKit
 
 class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
-    var gameScene:GameScene?
     var dynBrick = false
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
+    var didTouch = false
   
     func didMoveToScene() {
         isUserInteractionEnabled = true
@@ -50,6 +50,7 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             var brickX = position.x + (location.x - previousLocation.x)
 
             position = CGPoint(x: brickX, y: position.y)
+            didTouch = true
 
         }
         
@@ -60,8 +61,6 @@ class BricksNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         super.touchesEnded(touches, with: event)
         dynBrick = false
         dynamicBrick()
-        gameScene?.TotalMoves = gameScene!.TotalMoves + 1
-        print("message Sent",  gameScene?.TotalMoves)
         interact()
     }
     

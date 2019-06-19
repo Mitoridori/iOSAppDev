@@ -83,7 +83,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
-        counter()
     }
     
     
@@ -139,8 +138,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func counter(){
-       
-        movesMade?.text = "\(TotalMoves)"
+        if bricksNode?.didTouch == true {
+            TotalMoves += 1
+            print("message sent", TotalMoves)
+        }
         
     }
     

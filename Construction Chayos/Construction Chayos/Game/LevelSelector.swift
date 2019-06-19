@@ -25,10 +25,7 @@ class LevelSelector: SKScene {
         let touchedNode = self.atPoint(positionInScene)
         if let name = touchedNode.name {
             if name == "Level1" {
-                let scene = SKScene(fileNamed: "Level1")
-                scene?.size = CGSize(width: size.width, height: size.height)
-                scene?.scaleMode = .aspectFit
-                view!.presentScene(scene)
+                levelOne()
                 
             } 
         }
