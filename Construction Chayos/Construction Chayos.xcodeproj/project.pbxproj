@@ -191,13 +191,13 @@
 		DF0AABAB22A1A56D00C40685 /* Construction Chayos */ = {
 			isa = PBXGroup;
 			children = (
-				6009A04522BAB05B00F206A0 /* Game */,
 				DF15F30522B1ECF1000E6AFF /* SKTUtils */,
 				60F7887222B17E4700E138F8 /* ViewControllers */,
 				DFFEED7522B028750008A76D /* Nodes */,
 				DFFACC0E22A84F94002BC918 /* Scenes */,
-				DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */,
+				6009A04522BAB05B00F206A0 /* Game */,
 				6009E0F022A98B5C0034FFC7 /* Collisions.swift */,
+				DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */,
 				DF0AABB022A1A56D00C40685 /* Actions.sks */,
 				DF0AABB622A1A56D00C40685 /* Main.storyboard */,
 				DF0AABB922A1A56E00C40685 /* Assets.xcassets */,

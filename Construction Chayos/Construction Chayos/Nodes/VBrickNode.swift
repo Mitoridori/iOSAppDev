@@ -52,8 +52,8 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
         super.touchesEnded(touches, with: event)
         dynBrick = false
         dynamicBrick()
-        gameScene?.TotalMoves = gameScene!.TotalMoves + 1
-        print("message Sent",  gameScene?.TotalMoves)
+        gameScene?.counter()
+        print("message Sent",  gameScene?.counter())
         interact()
     }
     
