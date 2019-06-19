@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         
         playerNode = childNode(withName: "Player") as? PlayerNode
-        Brick = self.childNode(withName: "Brick") as! SKSpriteNode
+        Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
         
     }
@@ -112,8 +112,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 TotalMoves = 0
             }
             else if name == "LevelSelect" {
-                
+
             }
+            else if name == "Quit"{
+                    newGame()
+                    TotalMoves = 0            }
         }
     }
 
