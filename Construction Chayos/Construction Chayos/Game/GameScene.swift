@@ -53,6 +53,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
+        //BricksNode = enumerateChildNodes(withName: "Brick", using: { () in
+        
+        //})
         
     }
     
@@ -83,6 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
+        counter()
     }
     
     
@@ -138,6 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func counter(){
+        
         if bricksNode?.didTouch == true {
             TotalMoves += 1
             print("message sent", TotalMoves)

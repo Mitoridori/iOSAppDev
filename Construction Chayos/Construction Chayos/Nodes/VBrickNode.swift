@@ -8,29 +8,7 @@
 
 import SpriteKit
 
-class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
-        var gameScene:GameScene?
-        var dynBrick = false
-    
-    func didMoveToScene() {
-        isUserInteractionEnabled = true
-        physicsBody!.categoryBitMask = PhysicsCategory.Brick
-        physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
-        physicsBody!.contactTestBitMask = PhysicsCategory.Brick | PhysicsCategory.Board
-        dynBrick = false
-        dynamicBrick()
-        
-    }
-    
-    func interact() {
-        
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dynBrick = true
-        dynamicBrick()
-    }
-
+class VBrickNode: BrickParent {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         guard touches.first != nil else {
@@ -41,28 +19,11 @@ class VBrickNode: SKSpriteNode, EventListenerNode, InteractiveNode {
             
             let previousLocation = touch.previousLocation(in: self)
             
-            let brickY = position.y + (location.y - previousLocation.y)
+            var brickY = position.y + (location.y - previousLocation.y)
             
             position = CGPoint(x: position.x, y: brickY)
+            
         }
         
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        dynBrick = false
-        dynamicBrick()
-        gameScene?.counter()
-        print("message Sent",  gameScene?.counter())
-        interact()
-    }
-    
-    func dynamicBrick(){
-        if dynBrick == true{
-            physicsBody?.pinned = false
-        }
-        else if dynBrick == false {
-            physicsBody?.pinned = true
-        }
     }
 }
