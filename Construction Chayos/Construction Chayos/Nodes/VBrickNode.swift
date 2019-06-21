@@ -9,21 +9,14 @@
 import SpriteKit
 
 class VBrickNode: BrickParent {
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        guard touches.first != nil else {
-            return
-        }
-        for touch in touches {
-            let location = touch.location(in: self)
-            
-            let previousLocation = touch.previousLocation(in: self)
-            
-            var brickY = position.y + (location.y - previousLocation.y)
-            
-            position = CGPoint(x: position.x, y: brickY)
-            
-        }
+    
+    override init(texture: SKTexture!, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        posMod = CGPoint(x:0, y: 1)
     }
 }

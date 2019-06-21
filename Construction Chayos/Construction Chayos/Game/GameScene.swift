@@ -29,6 +29,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerNode:PlayerNode!
     var Brick: SKSpriteNode!
+    var levelTwo: SKSpriteNode!
+    var levelThree: SKSpriteNode!
+    var hiddenOne: SKSpriteNode!
     
     var bricksNode: BricksNode!
     var vbrickNode: VBrickNode!
@@ -53,12 +56,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
+        levelTwo = childNode(withName: "LockedOne") as? SKSpriteNode
+        levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
+        hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
+        
+        //hiddenOne.removeFromParent()
         //BricksNode = enumerateChildNodes(withName: "Brick", using: { () in
         
         //})
         
     }
-    
     
     func didBegin(_ contact: SKPhysicsContact) {
         
@@ -99,15 +106,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        view!.presentScene(scene)
     }
     
+    func levelSelect() {
+        
+        let scene = SKScene(fileNamed: "LevelSelect")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFit
+        view!.presentScene(scene)
+        
+    }
+    
     func didWin() {
         print (currentLevel)
-        
+        unlockLevel()
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
+        
 
     }
+    
+    func unlockLevel() {
+        
+//        if currentLevel == 1 {
+//            levelTwo.texture = SKTexture(imageNamed: "Level2")
+//        } else if currentLevel == 2{
+//            levelThree.texture = SKTexture(imageNamed: "Level3")
+//
+//        }
+        
+    }
+    
     func nextLevel(){
             print (currentLevel)
         if currentLevel <= 3 {
@@ -129,7 +158,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 TotalMoves = 0
             }
             else if name == "LevelSelect" {
-                
+                levelSelect()
                 }
             else if name == "Quit"{
                 nextLevel()}
