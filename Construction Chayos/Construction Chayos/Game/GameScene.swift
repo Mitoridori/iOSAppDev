@@ -38,12 +38,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var TotalMoves = 0
     var movesMade: SKLabelNode?
     var currentLevel: Int = 1
+    var hud = HUD()
     
-    override func didMove(to view: SKView) {
+//    var gameState: GameState = .initial {
+//        didSet {
+//            hud.updateGameState(from: oldValue, to: gameState)
+//        }
+//    }
+//
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//
+//
+//        let savedGameState = aDecoder.decodeInteger(
+//            forKey: "Scene.gameState")
+//        if let gameState = GameState(rawValue: savedGameState),
+//            gameState == .pause {currentLevel = aDecoder.decodeInteger(
+//            forKey: "Scene.currentLevel")}
+//    }
+    
+        
+    override func didMove(to view: SKView){
          physicsWorld.contactDelegate = self
-        
-
-        
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -54,7 +71,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
         
+        // gameState = .start
     }
+    
+    
     
     
     func didBegin(_ contact: SKPhysicsContact) {
