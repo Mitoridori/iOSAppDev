@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6005EC6222B95B5700DFC666 /* WonLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6005EC6122B95B5700DFC666 /* WonLevelViewController.swift */; };
 		600689B222B81CC200235DD2 /* WinScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 600689B122B81CC200235DD2 /* WinScreen.sks */; };
+		60071C7322BBFCA6009C3CBF /* BrickParentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60071C7222BBFCA6009C3CBF /* BrickParentNode.swift */; };
+		600760D922C28B0200F10737 /* BrickManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600760D822C28B0200F10737 /* BrickManager.swift */; };
 		6008F33B22B2CE9E00D0974B /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008F33A22B2CE9E00D0974B /* HomeScreenViewController.swift */; };
 		6009A03E22BAA7EE00F206A0 /* MainScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009A03D22BAA7EE00F206A0 /* MainScreen.sks */; };
 		6009A04022BAA80600F206A0 /* LevelSelect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009A03F22BAA80600F206A0 /* LevelSelect.sks */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		6005EC6122B95B5700DFC666 /* WonLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLevelViewController.swift; sourceTree = "<group>"; };
 		600689B122B81CC200235DD2 /* WinScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinScreen.sks; sourceTree = "<group>"; };
+		60071C7222BBFCA6009C3CBF /* BrickParentNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickParentNode.swift; sourceTree = "<group>"; };
+		600760D822C28B0200F10737 /* BrickManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickManager.swift; sourceTree = "<group>"; };
 		6008F33A22B2CE9E00D0974B /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		6009A03D22BAA7EE00F206A0 /* MainScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScreen.sks; sourceTree = "<group>"; };
 		6009A03F22BAA80600F206A0 /* LevelSelect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelSelect.sks; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				6009E0FA22A995B50034FFC7 /* PlayerNode.swift */,
 				DFF9D66122B08D3900228A57 /* VBrickNode.swift */,
 				DF9ED71E22B1631D00955C34 /* BoardNode.swift */,
+				60071C7222BBFCA6009C3CBF /* BrickParentNode.swift */,
+				600760D822C28B0200F10737 /* BrickManager.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */,
+				60071C7322BBFCA6009C3CBF /* BrickParentNode.swift in Sources */,
 				DF15F31622B1ECF1000E6AFF /* SKAction+Extensions.swift in Sources */,
 				DFF9D66022B06A0D00228A57 /* BricksNode.swift in Sources */,
 				DFFEED7422B027100008A76D /* titleScreen.swift in Sources */,
@@ -435,6 +442,7 @@
 				60F7887422B17ED700E138F8 /* ConstructionChaosViewController.swift in Sources */,
 				6009E0F122A98B5C0034FFC7 /* Collisions.swift in Sources */,
 				DF15F31522B1ECF1000E6AFF /* SKTTimingFunctions.swift in Sources */,
+				600760D922C28B0200F10737 /* BrickManager.swift in Sources */,
 				DF15F31C22B1ECF1000E6AFF /* Vector3.swift in Sources */,
 				DF15F31D22B1ECF1000E6AFF /* CGFloat+Extensions.swift in Sources */,
 				DF9ED71F22B1631D00955C34 /* BoardNode.swift in Sources */,
