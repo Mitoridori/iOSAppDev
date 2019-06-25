@@ -20,4 +20,14 @@ class PlayerNode: BrickParent {
         posMod = CGPoint(x:1, y: 0)
     }
     
+    override func didMoveToScene() {
+        isUserInteractionEnabled = true
+        physicsBody!.categoryBitMask = PhysicsCategory.Player
+        physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Board
+        physicsBody!.contactTestBitMask = PhysicsCategory.Board
+        dynBrick = false
+        dynamicBrick()
+    
+    }
+    
 }

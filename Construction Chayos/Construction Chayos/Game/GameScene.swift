@@ -60,10 +60,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
         hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
         
-        //hiddenOne.removeFromParent()
-        //BricksNode = enumerateChildNodes(withName: "Brick", using: { () in
-        
-        //})
         
     }
     
@@ -117,7 +113,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didWin() {
         print (currentLevel)
-        unlockLevel()
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
@@ -127,14 +122,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func unlockLevel() {
-        
-//        if currentLevel == 1 {
-//            levelTwo.texture = SKTexture(imageNamed: "Level2")
-//        } else if currentLevel == 2{
-//            levelThree.texture = SKTexture(imageNamed: "Level3")
-//
-//        }
-        
+    
+        let fadeAlpha = SKAction.fadeAlpha(to: 1.0, duration: 0.5)
+        hiddenOne.run(fadeAlpha)
     }
     
     func nextLevel(){

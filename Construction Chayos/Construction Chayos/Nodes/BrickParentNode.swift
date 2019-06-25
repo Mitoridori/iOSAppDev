@@ -38,8 +38,6 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     func interact() {
         
-        //        gameScene?.TotalMoves += 1
-        //        print("message Sent",  gameScene?.TotalMoves)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -72,7 +70,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         dynBrick = false
         didTouch = true
         dynamicBrick()
-        interact()
+        BrickManager().addMoves()
     }
     
     
