@@ -23,6 +23,8 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        
     }
     
     func didMoveToScene() {
@@ -70,7 +72,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         dynBrick = false
         didTouch = true
         dynamicBrick()
-        BrickManager().addMoves()
+        GameScene().brickManager.addMoves()
     }
     
     
