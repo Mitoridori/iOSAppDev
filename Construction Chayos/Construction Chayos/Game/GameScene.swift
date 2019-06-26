@@ -106,6 +106,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print ("Brick and board edge collision")}
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
             print ("Bricks have collision") }
+        
+        
+        
+        let positionInScene = touch!.location(in: self)
+        let touchedNode = self.atPoint(positionInScene)
+        if let name = touchedNode.name {
+            if name == "Reset" {
+
+            }
+        
 
     }
     
