@@ -42,6 +42,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var movesMade: SKLabelNode?
     var currentLevel: Int = 1
     var hud = HUD()
+    var brickManager = BrickManager()
+    
+    var velocity = CGPoint.zero
+    var lastTouchLocation: CGPoint?
+    var brickSpeed: CGFloat = 100
     
 //    var gameState: GameState = .initial {
 //        didSet {
@@ -61,7 +66,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            forKey: "Scene.currentLevel")}
 //    }
     
-        
     override func didMove(to view: SKView){
          physicsWorld.contactDelegate = self
         enumerateChildNodes(withName: "//*", using: { node, _ in
@@ -76,8 +80,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelTwo = childNode(withName: "LockedOne") as? SKSpriteNode
         levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
         hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
-        
-        
         // gameState = .start
     }
     
@@ -95,10 +97,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    var velocity = CGPoint.zero
-    var lastTouchLocation: CGPoint?
-    var brickSpeed: CGFloat = 100
-    
     
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
@@ -107,7 +105,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
-        counter()
     }
     
     
@@ -171,20 +168,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if name == "Quit"{
                 nextLevel()}
         }
-    }
-
-    func getTotalMoves(){
-        
-
-    }
-    
-    func counter(){
-        
-        if bricksNode?.didTouch == true {
-            TotalMoves += 1
-            print("message sent", TotalMoves)
-        }
-        
     }
     
     

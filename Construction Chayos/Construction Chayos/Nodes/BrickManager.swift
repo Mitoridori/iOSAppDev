@@ -14,10 +14,11 @@ class BrickManager {
     var totalMoves = 0
     
     func addMoves() {
+            
+        totalMoves = totalMoves + 1
         
-        //if totalMoves == 
-        totalMoves += 1
-        print(totalMoves)
+        print("\(totalMoves)")
+        
         
     }
     
