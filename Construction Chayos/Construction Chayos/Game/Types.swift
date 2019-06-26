@@ -1,16 +1,16 @@
+////
+////  Types.swift
+////  Construction Chayos
+////
+////  Created by Rebecca Stewart on 2019-06-19.
+////  Copyright © 2019 Rebecca Stewart. All rights reserved.
+////
 //
-//  Types.swift
-//  Construction Chayos
+//import Foundation
 //
-//  Created by Rebecca Stewart on 2019-06-19.
-//  Copyright © 2019 Rebecca Stewart. All rights reserved.
 //
-
-import Foundation
-
-
-enum GameState: Int {
-    case initial=0, start, play, win, reload, pause
-}
-
-
+//enum GameState: Int {
+//    case initial=0, start, play, win, reload, pause
+//}
+//
+//

@@ -23,8 +23,8 @@ class PlayerNode: BrickParent {
     override func didMoveToScene() {
         isUserInteractionEnabled = true
         physicsBody!.categoryBitMask = PhysicsCategory.Player
-        physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Board
-        physicsBody!.contactTestBitMask = PhysicsCategory.Board
+        physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Board | PhysicsCategory.TrafficCone
+        physicsBody!.contactTestBitMask = PhysicsCategory.TrafficCone
         dynBrick = false
         dynamicBrick()
     
