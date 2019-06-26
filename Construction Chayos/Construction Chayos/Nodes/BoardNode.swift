@@ -11,12 +11,12 @@ class BoardNode: SKSpriteNode, EventListenerNode {
     func didMoveToScene() {
        isUserInteractionEnabled = true
         let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
-        parent!.physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
 
-        parent!.physicsBody!.categoryBitMask = PhysicsCategory.Board
-        parent!.physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Player
+       physicsBody!.categoryBitMask = PhysicsCategory.Board
+       physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Player
         
-        parent!.physicsBody!.contactTestBitMask = PhysicsCategory.Brick
+       physicsBody!.contactTestBitMask = PhysicsCategory.Brick
 
     }
     
