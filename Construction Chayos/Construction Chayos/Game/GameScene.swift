@@ -46,32 +46,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var dt: TimeInterval = 0
     var TotalMoves = 0
     var movesMade: SKLabelNode?
-    //var vara = Varaiables()
+    var vara = Varaiables()
     var currentLevel: Int = 1
     var brickManager = BrickManager()
     
     var velocity = CGPoint.zero
     var lastTouchLocation: CGPoint?
     var brickSpeed: CGFloat = 100
-
     
-//    var gameState: GameState = .initial {
-//        didSet {
-//            hud.updateGameState(from: oldValue, to: gameState)
-//        }
-//    }
-//
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//
-//
-//        let savedGameState = aDecoder.decodeInteger(
-//            forKey: "Scene.gameState")
-//        if let gameState = GameState(rawValue: savedGameState),
-//            gameState == .pause {currentLevel = aDecoder.decodeInteger(
-//            forKey: "Scene.currentLevel")}
-//    }
+
     
     override func didMove(to view: SKView){
          physicsWorld.contactDelegate = self
@@ -85,13 +68,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             })
         
+        
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
         levelTwo = childNode(withName: "LockedOne") as? SKSpriteNode
         levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
         hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
-        // gameState = .start
+
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -106,17 +90,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print ("Brick and board edge collision")}
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
             print ("Bricks have collision") }
-        
-        
-        
-        let positionInScene = touch!.location(in: self)
-        let touchedNode = self.atPoint(positionInScene)
-        if let name = touchedNode.name {
-            if name == "Reset" {
-
-            }
-        
-
     }
     
     
@@ -128,16 +101,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         lastUpdateTime = currentTime
     }
-    
-//    func curLevel(){
-//        TCOne = childNode(withName: "trafficCone1") as? SKSpriteNode
-//        TCTwo = childNode(withName: "trafficCone2") as? SKSpriteNode
-//        TCThree = childNode(withName: "trafficCone3") as? SKSpriteNode
-//        
-//        if (TCOne != nil) {
-//        currentLevel = 1
-//        }
-//    }
     
     func newGame() {
         view!.presentScene(GameScene.level(levelNum: currentLevel))
@@ -153,6 +116,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didWin() {
+        
         print (currentLevel)
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
@@ -168,13 +132,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hiddenOne.run(fadeAlpha)
     }
     
+//   class func NumLvl(currentLevel: Int){
+//        var currentLevel = vara.curtLevel
+//
+//        return currentLevel
+//    }
+    
     func nextLevel(){
-            print (currentLevel)
-        if currentLevel <= 3 {
-            currentLevel += 1
-            print (currentLevel)
-        }
+        var NLvl = vara.curtLevel
+        vara.getlevel()
+        
+//            print ("Before lvl", currentLevel)
+//        if currentLevel <= 3 {
+//            currentLevel += 1
+//            print("New Level" , currentLevel)
+//        }
         //Make confetiee
+        
         run(SKAction.afterDelay(0, runBlock: newGame))
     
     }
@@ -196,13 +170,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
+ 
     class func level(levelNum: Int) -> GameScene? {
         let scene = GameScene(fileNamed: "Level\(levelNum)")!
         scene.currentLevel = levelNum
         scene.scaleMode = .aspectFit
         return scene
     }
+
     
 
     
