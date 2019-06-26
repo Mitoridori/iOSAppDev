@@ -15,6 +15,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     var dt: TimeInterval = 0
     var didTouch = false
     var posMod = CGPoint(x: 1, y: 0)
+    var gameScene = GameScene()
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -72,7 +73,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         dynBrick = false
         didTouch = true
         dynamicBrick()
-        GameScene().brickManager.addMoves()
+        gameScene.brickManager.addMoves()
     }
     
     

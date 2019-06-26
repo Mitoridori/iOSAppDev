@@ -9,9 +9,19 @@
 import SpriteKit
 
 
-class BrickManager {
+class BrickManager: SKSpriteNode {
     
     var totalMoves = 0
+    
+    override init(texture: SKTexture!, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
     
     func addMoves() {
             

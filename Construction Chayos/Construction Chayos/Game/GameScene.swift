@@ -40,7 +40,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bricksNode: BricksNode!
     var vbrickNode: VBrickNode!
-    var BPN: BrickParent!
 
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
@@ -160,7 +159,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let name = touchedNode.name {
             if name == "Reset" {
                 newGame()
-                TotalMoves = 0
             }
             else if name == "LevelSelect" {
                 levelSelect()
