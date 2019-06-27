@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
                 scene.size = CGSize(width: 1536, height: 2048)
+            
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -33,6 +34,12 @@ class GameViewController: UIViewController {
     }
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
     
 }

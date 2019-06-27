@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var movesMade: SKLabelNode?
     var vara = Varaiables()
     var currentLevel: Int = 1
-    var brickManager = BrickManager()
+    var brickManager:BrickManager? = nil
     
     var velocity = CGPoint.zero
     var lastTouchLocation: CGPoint?
@@ -74,7 +74,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelTwo = childNode(withName: "LockedOne") as? SKSpriteNode
         levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
         hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
-
+        
+        brickManager = BrickManager()
+        brickManager?.FindAllBricks(gameScene: self)
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -90,6 +93,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
             print ("Bricks have collision") }
     }
+    
+    
     
     
     override func update(_ currentTime: TimeInterval) {
