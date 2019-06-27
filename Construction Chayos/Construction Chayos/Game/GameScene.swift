@@ -138,14 +138,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //    }
     
     func nextLevel(){
-        var NLvl = vara.curtLevel
-        vara.getlevel()
+//        var NLvl = vara.curtLevel
+//        vara.getlevel()
         
-//            print ("Before lvl", currentLevel)
-//        if currentLevel <= 3 {
-//            currentLevel += 1
-//            print("New Level" , currentLevel)
-//        }
+            print ("Before lvl", currentLevel)
+        if currentLevel <= 3 {
+            currentLevel += 1
+            print("New Level" , currentLevel)
+        }
         //Make confetiee
         
         run(SKAction.afterDelay(0, runBlock: newGame))
