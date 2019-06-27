@@ -9,6 +9,7 @@
 import SpriteKit
 
 class LevelSelector: SKScene {
+    var gameScene = GameScene()
     
     func levelOne() {
         let scene = SKScene(fileNamed: "Level1")
@@ -17,7 +18,20 @@ class LevelSelector: SKScene {
         view!.presentScene(scene)
         
     }
-    
+    func levelTwo() {
+        let scene = SKScene(fileNamed: "Level2")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFit
+        view!.presentScene(scene)
+        
+    }
+    func levelThree() {
+        let scene = SKScene(fileNamed: "Level3")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFit
+        view!.presentScene(scene)
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
@@ -26,8 +40,16 @@ class LevelSelector: SKScene {
         if let name = touchedNode.name {
             if name == "Level1" {
                 levelOne()
-                
-            } 
+                gameScene.currentLevel = 1
+            }
+            if name == "Level2" {
+                levelTwo()
+                gameScene.currentLevel = 2
+            }
+            if name == "Level3" {
+                levelThree()
+                gameScene.currentLevel = 3
+            }
         }
     }
     

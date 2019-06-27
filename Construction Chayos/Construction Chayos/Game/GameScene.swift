@@ -71,9 +71,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         movesMade = childNode(withName: "moves") as? SKLabelNode
-        levelTwo = childNode(withName: "LockedOne") as? SKSpriteNode
-        levelThree = childNode(withName: "LockedTwo") as? SKSpriteNode
-        hiddenOne = childNode(withName: "LevelTwo") as? SKSpriteNode
 
     }
     
@@ -163,7 +160,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if name == "LevelSelect" {
                 levelSelect()
                 }
-            else if name == "Quit"{
+            else if name == "NextLvl"{
                 nextLevel()}
         }
     }
@@ -176,7 +173,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return scene
     }
 
-    
+
+//    func addSmoke() {
+//        let smoke = SKEmitterNode(fileNamed: "smoke.sks")!
+//        smoke.zPosition = -1
+//        smoke.numParticlesToEmit = 1
+//        smoke.run(SKAction.wait(forDuration: 3.0))
+//    }
+
 
     
 }
