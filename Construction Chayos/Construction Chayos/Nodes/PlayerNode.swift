@@ -9,6 +9,7 @@
 import SpriteKit
 
 class PlayerNode: BrickParent {
+ 
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -29,5 +30,21 @@ class PlayerNode: BrickParent {
         dynamicBrick()
     
     }
+    
+//    func addSmoke() {
+//        let smoke = SKEmitterNode(fileNamed: "smoke.sks")!
+//        smoke.zPosition = -1
+//        smoke.targetNode = PlayerNode
+//        smoke.numParticlesToEmit = 1
+//        smoke.run(SKAction.removeFromParentAfterDelay(2.0))
+//    }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        dynBrick = true
+//        dynamicBrick()
+//        gameScreen.addSmoke()
+//        
+//    }
+
     
 }

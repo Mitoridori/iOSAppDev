@@ -46,6 +46,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dynBrick = true
         dynamicBrick()
+       // gameScene.addSmoke()
         
     }
     
