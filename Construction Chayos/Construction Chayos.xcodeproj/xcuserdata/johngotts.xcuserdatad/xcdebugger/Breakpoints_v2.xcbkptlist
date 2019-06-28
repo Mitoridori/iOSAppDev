@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Nodes/BrickManager.swift"
-            timestampString = "583439137.083389"
+            timestampString = "583444276.803728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Nodes/BrickManager.swift"
-            timestampString = "583439137.083462"
+            timestampString = "583444276.8037781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Nodes/BrickManager.swift"
-            timestampString = "583439137.0835069"
+            timestampString = "583444276.803816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Nodes/BrickParentNode.swift"
-            timestampString = "583439137.083551"
+            timestampString = "583444276.803853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -122,12 +122,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Nodes/BrickParentNode.swift"
-            timestampString = "583439137.083606"
+            timestampString = "583444276.803887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "touchesEnded(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Construction Chayos/Game/GameScene.swift"
+            timestampString = "583444276.803921"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

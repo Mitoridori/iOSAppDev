@@ -153,21 +153,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        return currentLevel
 //    }
     
-    func nextLevel(){
-//        var NLvl = vara.curtLevel
-//        vara.getlevel()
-        
-            print ("Before lvl", currentLevel)
-        if currentLevel <= 3 {
-            currentLevel += 1
-            print("New Level" , currentLevel)
-        }
-        //Make confetiee
-        
-        run(SKAction.afterDelay(0, runBlock: newGame))
-    
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         let positionInScene = touch!.location(in: self)
@@ -179,8 +164,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if name == "LevelSelect" {
                 levelSelect()
                 }
-            else if name == "NextLvl"{
-                nextLevel()}
         }
     }
     

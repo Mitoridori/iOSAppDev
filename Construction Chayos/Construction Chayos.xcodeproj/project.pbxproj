@@ -22,6 +22,7 @@
 		6009E10122A99C510034FFC7 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10022A99C510034FFC7 /* Level1.sks */; };
 		6009E10322A99C720034FFC7 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* Level2.sks */; };
 		6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* Level3.sks */; };
+		600DA06222C697E900651D5B /* WinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600DA06122C697E900651D5B /* WinScreen.swift */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -87,6 +88,7 @@
 		6009E10022A99C510034FFC7 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		6009E10222A99C720034FFC7 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		6009E10422A99C8B0034FFC7 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		600DA06122C697E900651D5B /* WinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScreen.swift; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				6009E0EA22A984530034FFC7 /* LevelSelector.swift */,
 				DF0AABB222A1A56D00C40685 /* GameScene.swift */,
 				DFB3E9C722C29D0E0052848A /* varaiables.swift */,
+				600DA06122C697E900651D5B /* WinScreen.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				DF15F31222B1ECF1000E6AFF /* SKColor+Extensions.swift in Sources */,
 				DF15F31322B1ECF1000E6AFF /* CGVector+Extensions.swift in Sources */,
 				DF15F31922B1ECF1000E6AFF /* CGPoint+Extensions.swift in Sources */,
+				600DA06222C697E900651D5B /* WinScreen.swift in Sources */,
 				DFF9D66222B08D3900228A57 /* VBrickNode.swift in Sources */,
 				DF15F31B22B1ECF1000E6AFF /* SKTAudio.swift in Sources */,
 				DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */,
