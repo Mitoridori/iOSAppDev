@@ -42,7 +42,6 @@ class BrickManager: SKSpriteNode {
         {
             node, stop in
             
-            print(i)
             if let brick = node as? BrickParent {
                 
                 brick.brickManager = self

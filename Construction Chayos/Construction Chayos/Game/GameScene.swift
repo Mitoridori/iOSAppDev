@@ -33,18 +33,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Brick: SKSpriteNode!
     var levelTwo: SKSpriteNode!
     var levelThree: SKSpriteNode!
-    var hiddenOne: SKSpriteNode!
     var TCOne: SKSpriteNode!
     var TCTwo: SKSpriteNode!
     var TCThree: SKSpriteNode!
+    var movesMade: SKLabelNode!
     
     var bricksNode: BricksNode!
     var vbrickNode: VBrickNode!
 
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
-    var TotalMoves = 0
-    var movesMade: SKLabelNode?
+    var TotalMoves = 0 {
+        didSet {
+            movesMade.text = "\(TotalMoves)"
+            
+        }
+    }
     var vara = Varaiables()
     var currentLevel: Int = 1
     var brickManager:BrickManager? = nil
@@ -70,9 +74,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
-        movesMade = childNode(withName: "moves") as? SKLabelNode
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
+        
+        movesMadeLabel()
+        update(0.5)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -89,7 +95,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print ("Bricks have collision") }
     }
     
+    func movesMadeLabel() {
+        
+        movesMade = SKLabelNode(fontNamed: "Chalkduster")
+        movesMade.text = "\(TotalMoves)"
+        movesMade.fontSize = 72
+        movesMade.position = CGPoint(x: -118.561, y: 850)
+        movesMade.bringToFront()
+        addChild(movesMade)
+        
+    }
     
+    func getTotalMoves() {
+        
+        TotalMoves = brickManager!.totalMoves
+        
+    }
     
     
     override func update(_ currentTime: TimeInterval) {
@@ -99,6 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             dt = 0
         }
         lastUpdateTime = currentTime
+        getTotalMoves()
     }
     
     func newGame() {
@@ -123,12 +145,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.presentScene(scene)
 
 
-    }
-    
-    func unlockLevel() {
-    
-        let fadeAlpha = SKAction.fadeAlpha(to: 1.0, duration: 0.5)
-        hiddenOne.run(fadeAlpha)
     }
     
 //   class func NumLvl(currentLevel: Int){
