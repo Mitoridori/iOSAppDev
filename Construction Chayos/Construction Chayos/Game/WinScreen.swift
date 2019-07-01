@@ -56,9 +56,11 @@ class WinScreen: SKScene {
         
     }
     
-//    func newGame() {
-//        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
-//    }
+
+    func newGame() {
+        print ("newGame: ", vara.curtLevel)
+        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
+    }
     
 
     func nextLevel(){
