@@ -85,6 +85,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         movesMadeLabel()
         update(0.5)
+        gameState = .start
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -127,6 +128,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         lastUpdateTime = currentTime
         getTotalMoves()
+        
+        if gameState != .play {
+            isPaused = true
+            return
+            
+        }
     }
     
     func newGame() {
@@ -170,13 +177,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let touch = touches.first
         let positionInScene = touch!.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
-        if let name = touchedNode.name {
-            if name == "Reset" {
-                newGame()
-            }
-            else if name == "LevelSelect" {
-                levelSelect()
+        switch gameState {
+        case .start:
+            gameState = .play
+            isPaused = false
+        
+        case .play:
+            if let name = touchedNode.name {
+                if name == "Reset" {
+                    newGame()
                 }
+                else if name == "LevelSelect" {
+                    levelSelect()
+                }
+            }
+            
+        default:
+            break
+            
         }
     }
     
@@ -195,8 +213,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        smoke.numParticlesToEmit = 1
 //        smoke.run(SKAction.wait(forDuration: 3.0))
 //    }
+}
 
-
+extension GameScene {
+    func applicationDidBecomeActive() {
+        print("* applicationDidBecomeActive")
+        
+    }
+    
+    func applicationWillResignActive() {
+        print("* ResignActive")
+        
+    }
+    
+    func applicationDidEnterBackground() {
+        print("* entered background")
+        
+    }
+    
+    func addObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.applicationDidBecomeActive()
+        }
+        notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.applicationWillResignActive()
+            
+        }
+        notificationCenter.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.applicationDidEnterBackground()
+            
+            
+        }
+        
+    }
     
 }
 

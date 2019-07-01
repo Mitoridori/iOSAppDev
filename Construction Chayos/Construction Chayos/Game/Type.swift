@@ -10,6 +10,6 @@ import Foundation
 
 
 enum GameState: Int {
-    case initial=0, play, pause
+    case initial=0, start, play, pause
 }
 
