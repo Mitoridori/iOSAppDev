@@ -145,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didWin() {
         
-        print (currentLevel)
+        print ("level going into winscreen", currentLevel)
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
