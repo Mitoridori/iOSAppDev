@@ -56,6 +56,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var velocity = CGPoint.zero
     var lastTouchLocation: CGPoint?
     var brickSpeed: CGFloat = 100
+    var hud = HUD()
+    var gameState: GameState = .initial {
+        didSet{
+            hud.updateGameState(from: oldValue, to: gameState)
+        }
+    }
     
 
     
@@ -124,7 +130,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func newGame() {
-        view!.presentScene(GameScene.level(levelNum: currentLevel))
+         transitionToScene(level: currentLevel)
+        //view!.presentScene(GameScene.level(levelNum: currentLevel))
     }
     
     func levelSelect() {
@@ -143,15 +150,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
+        transitionToScene(level: currentLevel + 1)
 
 
     }
     
-//   class func NumLvl(currentLevel: Int){
-//        var currentLevel = vara.curtLevel
-//
-//        return currentLevel
-//    }
+    func transitionToScene(level: Int){
+        guard let newScene = SKScene(fileNamed: "Level\(level)")
+            as? GameScene else{
+                fatalError("Level:\(level) not found")
+        }
+        newScene.currentLevel = level
+        newScene.scaleMode = .aspectFit
+        view?.presentScene(newScene, transition: SKTransition.flipVertical(withDuration: 0.5))
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
