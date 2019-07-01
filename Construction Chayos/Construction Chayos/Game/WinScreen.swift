@@ -11,10 +11,15 @@ import SpriteKit
 
 class WinScreen: SKScene {
     
-    var gameScene: GameScene?
+    var gameScene: GameScene? = nil
     var movesTaken: SKLabelNode!
     var vara = Varaiables()
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        gameScene = GameScene(coder: aDecoder)
+    }
     
     override func didMove(to view: SKView){
         
@@ -26,8 +31,6 @@ class WinScreen: SKScene {
                 eventListenerNode.didMoveToScene()
             }
         })
-        
-        gameScene = GameScene()
         
         movesTakenLabel()
         
@@ -53,9 +56,9 @@ class WinScreen: SKScene {
         
     }
     
-    func newGame() {
-        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
-    }
+//    func newGame() {
+//        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
+//    }
     
 
     func nextLevel(){
@@ -70,7 +73,7 @@ class WinScreen: SKScene {
         }
         //Make confetiee
         //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
-        run(SKAction.afterDelay(0, runBlock: newGame))
+        //run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
     

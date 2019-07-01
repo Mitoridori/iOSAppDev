@@ -13,24 +13,27 @@ class LevelSelector: SKScene {
     var vara = Varaiables()
     
     func levelOne() {
-        let scene = SKScene(fileNamed: "Level1")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+        if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level1") as? GameScene {
+            scene.size = CGSize(width: size.width, height: size.height)
+            scene.scaleMode = .aspectFit
+            view!.presentScene(scene)
+        }
         
     }
     func levelTwo() {
-        let scene = SKScene(fileNamed: "Level2")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+        if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level2") as? GameScene {
+            scene.size = CGSize(width: size.width, height: size.height)
+            scene.scaleMode = .aspectFit
+            view!.presentScene(scene)
+        }
         
     }
     func levelThree() {
-        let scene = SKScene(fileNamed: "Level3")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+        if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level3") as? GameScene {
+            scene.size = CGSize(width: size.width, height: size.height)
+            scene.scaleMode = .aspectFit
+            view!.presentScene(scene)
+        }
         
     }
     
