@@ -16,14 +16,14 @@ protocol InteractiveNode {
     func interact()
 }
 
-struct PhysicsCategory {
-    static let None:     UInt32 = 0 << 0
-    static let Player:   UInt32 = 1 << 1
-    static let Brick:    UInt32 = 1 << 2
-    static let TrafficCone: UInt32 = 1 << 3
-    static let Board:    UInt32 = 1 << 4
-    
-}
+//struct PhysicsCategory {
+//    static let None:     UInt32 = 0 << 0
+//    static let Player:   UInt32 = 1 << 1
+//    static let Brick:    UInt32 = 1 << 2
+//    static let TrafficCone: UInt32 = 1 << 3
+//    static let Board:    UInt32 = 1 << 4
+//    
+//}
 
 
 
