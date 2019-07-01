@@ -150,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
-        transitionToScene(level: currentLevel + 1)
+        
 
 
     }

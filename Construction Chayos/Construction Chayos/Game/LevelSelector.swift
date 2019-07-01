@@ -10,6 +10,7 @@ import SpriteKit
 
 class LevelSelector: SKScene {
     var gameScene = GameScene()
+    var vara = Varaiables()
     
     func levelOne() {
         let scene = SKScene(fileNamed: "Level1")
@@ -41,14 +42,17 @@ class LevelSelector: SKScene {
             if name == "Level1" {
                 levelOne()
                 gameScene.currentLevel = 1
+                vara.curtLevel = 1
             }
             if name == "Level2" {
                 levelTwo()
                 gameScene.currentLevel = 2
+                vara.curtLevel = 2
             }
             if name == "Level3" {
                 levelThree()
                 gameScene.currentLevel = 3
+                vara.curtLevel = 3
             }
         }
     }

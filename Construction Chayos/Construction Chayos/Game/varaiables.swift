@@ -9,8 +9,9 @@
 import SpriteKit
 
 class Varaiables: SKScene, InteractiveNode{
+    //var gameScene = GameScene()
     func interact() {
-      var currentLevel: Int = 1
+     // var curtLevel: Int = 1
     }
     
     
@@ -19,6 +20,8 @@ class Varaiables: SKScene, InteractiveNode{
 
     func getlevel() {
 
+        
+        
         curtLevel += 1
 
         //return curtLevel

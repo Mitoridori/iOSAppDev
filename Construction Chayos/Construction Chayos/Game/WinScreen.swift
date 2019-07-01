@@ -13,6 +13,7 @@ class WinScreen: SKScene {
     
     var gameScene: GameScene?
     var movesTaken: SKLabelNode!
+    var vara = Varaiables()
     
     
     override func didMove(to view: SKView){
@@ -53,20 +54,22 @@ class WinScreen: SKScene {
     }
     
     func newGame() {
-        view!.presentScene(GameScene.level(levelNum: gameScene?.currentLevel ?? 1))
+        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
     }
     
+
     func nextLevel(){
-        //        var NLvl = vara.curtLevel
-        //        vara.getlevel()
+        var Nlvl = vara.curtLevel
+                vara.getlevel()
+      
         
-        print ("Before lvl", gameScene!.currentLevel)
-        if gameScene?.currentLevel ?? 1 <= 3 {
-            gameScene?.currentLevel += 1
-            print("New Level" , gameScene!.currentLevel)
+        print ("Before lvl", Nlvl)
+        if Nlvl <= 3 {
+           Nlvl += 1
+            print("New Level" , Nlvl)
         }
         //Make confetiee
-        
+        //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
         run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
