@@ -69,19 +69,21 @@ class WinScreen: SKScene {
     
 
     func nextLevel(){
+        vara.getCurrentLvl()
+        if vara.curtLevel == 3 {
+            vara.SetLevel(i: 1)
+        }
+        else {
         vara.getlevel()
-        
+        }
         //Make confetiee
-
-        //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
-
         run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
     
     func UnlockStars() {
         
-        if (gameScene.currentLevel == 1) {
+        if (vara.curtLevel == 1) {
             
             if(gameScene.TotalMoves  <= 10) {
                 
@@ -96,7 +98,7 @@ class WinScreen: SKScene {
                 
             }
             
-        } else if (gameScene.currentLevel == 2) {
+        } else if (vara.curtLevel == 2) {
             
             if(gameScene.TotalMoves <= 25) {
                 
@@ -112,7 +114,7 @@ class WinScreen: SKScene {
                 
             }
             
-        } else if(gameScene.currentLevel == 3) {
+        } else if(vara.curtLevel == 3) {
             
             if(gameScene.TotalMoves <= 21) {
                 

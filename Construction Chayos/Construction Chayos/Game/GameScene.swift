@@ -17,9 +17,7 @@ protocol InteractiveNode {
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    
-    var currentGameViewController: GameViewController?
-    
+
     var playerNode:PlayerNode!
     var Brick: SKSpriteNode!
     var levelTwo: SKSpriteNode!
@@ -43,9 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     var savedMoves = 0
     var vara = Varaiables()
-    var currentLevel: Int = 1
-
-    
+ 
     var brickManager:BrickManager? = nil
     
     var velocity = CGPoint.zero
@@ -57,14 +53,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hud.updateGameState(from: oldValue, to: gameState)
         }
     }
-    
+
     override func didMove(to view: SKView){
          physicsWorld.contactDelegate = self
         
         let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
-        
-        
+
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -154,12 +149,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if gameState != .play {
             isPaused = true
             return
-            
         }
     }
     
     func newGame() {
-         transitionToScene(level: currentLevel)
+        vara.getCurrentLvl()
+        transitionToScene(level: vara.curtLevel)
+
     }
     
     func levelSelect() {
@@ -172,14 +168,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didWin() {
-        //print ("level going into winscreen", currentLevel, vara.curtLevel)
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
-        
-
-
     }
     
     func transitionToScene(level: Int){
@@ -187,10 +179,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             as? GameScene else{
                 fatalError("Level:\(level) not found")
         }
-        newScene.currentLevel = level
+        newScene.vara.curtLevel = level
         newScene.scaleMode = .aspectFit
         view?.presentScene(newScene, transition: SKTransition.flipVertical(withDuration: 0.4))
-        
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -219,21 +211,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
- 
     class func level(levelNum: Int) -> GameScene? {
         let scene = GameScene(fileNamed: "Level\(levelNum)")!
-        scene.currentLevel = levelNum
+        scene.vara.curtLevel = levelNum
         scene.scaleMode = .aspectFit
         return scene
     }
 
-
-//    func addSmoke() {
-//        let smoke = SKEmitterNode(fileNamed: "smoke.sks")!
-//        smoke.zPosition = -1
-//        smoke.numParticlesToEmit = 1
-//        smoke.run(SKAction.wait(forDuration: 3.0))
-//    }
 }
 
 extension GameScene {
@@ -301,7 +285,7 @@ extension GameScene {
     override func encode(with aCoder: NSCoder) {
         
         aCoder.encode(TotalMoves, forKey: "totalMovesTaken")
-        aCoder.encode(currentLevel, forKey: "GamesCurrentLevel")
+        aCoder.encode(vara.curtLevel, forKey: "GamesCurrentLevel")
         aCoder.encode(gameState.rawValue, forKey: "gamesState")
         super.encode(with: aCoder)
         

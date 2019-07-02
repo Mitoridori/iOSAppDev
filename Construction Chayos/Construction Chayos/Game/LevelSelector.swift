@@ -46,17 +46,17 @@ class LevelSelector: SKScene {
             if name == "Level1" {
                 levelOne()
                 vara.SetLevel(i: 1)
-                
+                vara.getCurrentLvl()
             }
             if name == "Level2" {
                 levelTwo()
                 vara.SetLevel(i: 2)
-               
+                vara.getCurrentLvl()
             }
             if name == "Level3" {
                 levelThree()
                 vara.SetLevel(i: 3)
-                
+                vara.getCurrentLvl()
             }
         }
     }
