@@ -12,6 +12,7 @@ import SpriteKit
 class BrickManager: SKSpriteNode {
     
     var totalMoves = 0
+    var pauseChecker: GameScene? = nil
     
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
@@ -37,6 +38,7 @@ class BrickManager: SKSpriteNode {
     
     func FindAllBricks(gameScene: GameScene)
     {
+        pauseChecker = gameScene
         var i = 0
         gameScene.enumerateChildNodes(withName: "Brick")
         {

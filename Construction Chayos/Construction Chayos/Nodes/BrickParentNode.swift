@@ -52,6 +52,10 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
+        if isGamePaused() {
+            return
+            
+        }
         guard touches.first != nil else {
             return
         }
@@ -71,6 +75,10 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        if isGamePaused() {
+            return
+            
+        }
         dynBrick = false
         didTouch = true
         dynamicBrick()
@@ -80,6 +88,11 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         }
     }
     
+    func isGamePaused() -> Bool {
+        
+        return brickManager?.pauseChecker?.isPaused ?? false
+        
+    }
     
     func dynamicBrick(){
         if dynBrick == true{
