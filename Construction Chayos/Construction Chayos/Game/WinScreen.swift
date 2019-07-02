@@ -71,7 +71,7 @@ class WinScreen: SKScene {
     
     func UnlockStars() {
         
-        if (gameScene.currentLevel == 1) {
+        if (vara.curtLevel == 1) {
             
             if(gameScene.TotalMoves  <= 10) {
                 
@@ -86,7 +86,7 @@ class WinScreen: SKScene {
                 
             }
             
-        } else if (gameScene.currentLevel == 2) {
+        } else if (vara.curtLevel == 2) {
             
             if(gameScene.TotalMoves <= 25) {
                 
@@ -102,7 +102,7 @@ class WinScreen: SKScene {
                 
             }
             
-        } else if(gameScene.currentLevel == 3) {
+        } else if(vara.curtLevel == 3) {
             
             if(gameScene.TotalMoves <= 21) {
                 
