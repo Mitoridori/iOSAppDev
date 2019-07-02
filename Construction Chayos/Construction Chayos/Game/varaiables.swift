@@ -19,8 +19,6 @@ class Varaiables: SKScene, InteractiveNode{
     public var curtLevel: Int = 1
 
     func getlevel() {
-
-        
         
         curtLevel += 1
 

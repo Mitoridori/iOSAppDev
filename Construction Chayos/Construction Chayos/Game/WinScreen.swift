@@ -53,7 +53,7 @@ class WinScreen: SKScene {
 
     func newGame() {
         print ("newGame: ", vara.curtLevel)
-        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ))
+        view!.presentScene(GameScene.level(levelNum: vara.curtLevel))
     }
     
 
@@ -69,7 +69,7 @@ class WinScreen: SKScene {
         }
         //Make confetiee
         //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
-        //run(SKAction.afterDelay(0, runBlock: newGame))
+        run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
     
@@ -77,15 +77,30 @@ class WinScreen: SKScene {
         
         if (gameScene.currentLevel == 1) {
             
-            if(gameScene.TotalMoves ?? 0 <= 7) {
+            if(gameScene.TotalMoves  <= 10) {
                 
+                
+                
+            } else if(gameScene.TotalMoves > 10 && gameScene.TotalMoves <= 15) {
+                
+                
+                
+            } else {
                 
                 
             }
             
         } else if (gameScene.currentLevel == 2) {
             
-            if(gameScene.TotalMoves <= 7) {
+            if(gameScene.TotalMoves <= 25) {
+                
+                
+                
+            } else if(gameScene.TotalMoves > 25 && gameScene.TotalMoves <= 30) {
+                
+                
+                
+            } else {
                 
                 
                 
@@ -93,7 +108,19 @@ class WinScreen: SKScene {
             
         } else if(gameScene.currentLevel == 3) {
             
-            
+            if(gameScene.TotalMoves <= 21) {
+                
+                
+                
+            } else if(gameScene.TotalMoves > 21 && gameScene.TotalMoves <= 26) {
+                
+                
+                
+            } else {
+                
+                
+                
+            }
             
         }
         

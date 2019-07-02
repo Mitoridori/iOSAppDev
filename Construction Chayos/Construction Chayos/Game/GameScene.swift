@@ -37,6 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var TCTwo: SKSpriteNode!
     var TCThree: SKSpriteNode!
     var movesMade: SKLabelNode!
+    var tapToStart: SKLabelNode!
     
     var bricksNode: BricksNode!
     var vbrickNode: VBrickNode!
@@ -80,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 eventListenerNode.didMoveToScene()
                 }
             })
+        gameState = .start
         
         playerNode = childNode(withName: "Player") as? PlayerNode
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
@@ -87,9 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         brickManager?.FindAllBricks(gameScene: self)
         
         movesMadeLabel()
-        update(0.5)
-        gameState = .start
-        
+        beginGameLabel()
         addObservers()
     }
     
@@ -116,6 +116,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         movesMade.bringToFront()
         addChild(movesMade)
 
+    }
+    
+    func beginGameLabel() {
+        
+        tapToStart = SKLabelNode(fontNamed: "Chalkduster")
+        tapToStart.text = "Tap screen to begin"
+        tapToStart.fontSize = 90
+        tapToStart.position = .zero
+        tapToStart.bringToFront()
+        addChild(tapToStart)
+        
     }
 
     func getTotalMoves() {
@@ -186,6 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case .start:
             gameState = .play
             isPaused = false
+            tapToStart.removeFromParent()
         
         case .play:
             if let name = touchedNode.name {

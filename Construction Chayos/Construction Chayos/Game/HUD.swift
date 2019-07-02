@@ -25,24 +25,12 @@ enum HUDMessages {
 
 class HUD: SKNode {
     
-    var movesMade: SKLabelNode!
-    var brickManager:BrickManager? = nil
-    
-    var TotalMoves = 0 {
-        didSet {
-            movesMade.text = "\(TotalMoves)"
-            
-        }
-    }
-    
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     
     override init() {
         super.init()
         name = "HUD"
-        
-        brickManager = BrickManager()
         
     }
     
@@ -57,28 +45,10 @@ class HUD: SKNode {
         label = SKLabelNode(fontNamed: HUDSettings.font)
         label.text = message
         label.name = message
-        label.zPosition = 100
+        label.bringToFront()
         addChild(label)
         label.fontSize = fontSize
         label.position = position
-    }
-    
-    
-    func movesMadeLabel() {
-        
-        movesMade = SKLabelNode(fontNamed: "Chalkduster")
-        movesMade.text = "\(TotalMoves)"
-        movesMade.fontSize = 72
-        movesMade.position = CGPoint(x: -118.561, y: 850)
-        movesMade.bringToFront()
-        addChild(movesMade)
-        
-    }
-    
-    func getTotalMoves() {
-        
-        TotalMoves = brickManager!.totalMoves
-        
     }
     
     func updateHUD(_ currentTime: TimeInterval) {
@@ -88,13 +58,13 @@ class HUD: SKNode {
             dt = 0
         }
         lastUpdateTime = currentTime
-        getTotalMoves()
     }
 
     func updateGameState(from: GameState, to: GameState){
         clearUI(gameState: from)
         updateUI(gameState: to)
     }
+    
     private func updateUI(gameState: GameState){
         switch gameState {
         case .start:
