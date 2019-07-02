@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
     }
+    var savedMoves = 0
     var vara = Varaiables()
     var currentLevel: Int = 1
 
@@ -57,21 +58,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        if let currentLevel =
-//            userData?.object(forKey: "GamesCurrentLevel") as? Int {
-//            self.currentLevel = currentLevel
-//        }
-//    }
-    
     override func didMove(to view: SKView){
          physicsWorld.contactDelegate = self
         
         let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
-        
-        //currentLevel = userData?.object(forKey: "currentLevel"){self.currentLevel = currentLevel}
         
         
         enumerateChildNodes(withName: "//*", using: { node, _ in
@@ -134,6 +125,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    func saveTotalMoves() {
+        
+        if(UserDefaults.standard.object(forKey: "savedMoves") != nil)
+        {
+            savedMoves = UserDefaults.standard.object(forKey: "savedMoves") as! Int
+        }
+        
+    }
+    
+    func setSavedMoves(i: Int) {
+        
+        savedMoves = i
+        UserDefaults.standard.set(TotalMoves, forKey: "savedMoves")
+        
+    }
+    
     
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
@@ -153,7 +160,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func newGame() {
          transitionToScene(level: currentLevel)
-        //view!.presentScene(GameScene.level(levelNum: currentLevel))
     }
     
     func levelSelect() {
@@ -183,7 +189,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         newScene.currentLevel = level
         newScene.scaleMode = .aspectFit
-        view?.presentScene(newScene, transition: SKTransition.flipVertical(withDuration: 0.5))
+        view?.presentScene(newScene, transition: SKTransition.flipVertical(withDuration: 0.4))
         
     }
     

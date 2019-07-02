@@ -30,7 +30,8 @@ class BrickManager: SKSpriteNode {
     func addMoves() {
         
         totalMoves = totalMoves + 1
-        
+        pauseChecker?.setSavedMoves(i: totalMoves)
+
         print("\(totalMoves)")
         
         

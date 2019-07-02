@@ -27,8 +27,8 @@ class MainScreen: SKScene {
         let positionInScene = touch!.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
         //Loads Information stored as a key (which is called hello) and stores in in the variable hello
-        hello = UserDefaults.standard.object(forKey: "hello") as! Int
-        hello += 1
+//        hello = UserDefaults.standard.object(forKey: "hello") as! Int
+//        hello += 1
         //Saves Information passed in (hello, ) in key (forKey: "hello"
         UserDefaults.standard.set(hello, forKey: "hello")
         

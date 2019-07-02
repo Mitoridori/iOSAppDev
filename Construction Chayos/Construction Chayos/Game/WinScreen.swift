@@ -14,6 +14,10 @@ class WinScreen: SKScene {
     var gameScene = GameScene()
     var movesTaken: SKLabelNode!
     var vara = Varaiables()
+    var starOne: SKSpriteNode!
+    var starTwo: SKSpriteNode!
+    var starThree: SKSpriteNode!
+    
     
     override func didMove(to view: SKView){
         
@@ -26,6 +30,11 @@ class WinScreen: SKScene {
             }
         })
         
+        starOne = childNode(withName: "starOne") as? SKSpriteNode
+        starTwo = childNode(withName: "starTwo") as? SKSpriteNode
+        starThree = childNode(withName: "starThree") as? SKSpriteNode
+        
+        
         movesTakenLabel()
         
     }
@@ -33,7 +42,8 @@ class WinScreen: SKScene {
     func movesTakenLabel() {
         
         movesTaken = SKLabelNode(fontNamed: "Chalkduster")
-        movesTaken.text = "\(gameScene.TotalMoves)"
+        gameScene.saveTotalMoves()
+        movesTaken.text = "\(gameScene.savedMoves + 1)"
         movesTaken.fontSize = 72
         movesTaken.position = CGPoint(x: 72.486, y: -161.479)
         movesTaken.bringToFront()
