@@ -11,6 +11,7 @@ import SpriteKit
 class LevelSelector: SKScene {
     var gameScene = GameScene()
     var vara = Varaiables()
+    var hello = 0
     
     func levelOne() {
         if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level1") as? GameScene {
@@ -44,18 +45,18 @@ class LevelSelector: SKScene {
         if let name = touchedNode.name {
             if name == "Level1" {
                 levelOne()
-                gameScene.currentLevel = 1
-                vara.curtLevel = 1
+                vara.SetLevel(i: 1)
+                
             }
             if name == "Level2" {
                 levelTwo()
-                gameScene.currentLevel = 2
-                vara.curtLevel = 2
+                vara.SetLevel(i: 2)
+               
             }
             if name == "Level3" {
                 levelThree()
-                gameScene.currentLevel = 3
-                vara.curtLevel = 3
+                vara.SetLevel(i: 3)
+                
             }
         }
     }
