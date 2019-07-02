@@ -11,15 +11,9 @@ import SpriteKit
 
 class WinScreen: SKScene {
     
-    var gameScene: GameScene? = nil
+    var gameScene = GameScene()
     var movesTaken: SKLabelNode!
     var vara = Varaiables()
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        gameScene = GameScene(coder: aDecoder)
-    }
     
     override func didMove(to view: SKView){
         
@@ -39,7 +33,7 @@ class WinScreen: SKScene {
     func movesTakenLabel() {
         
         movesTaken = SKLabelNode(fontNamed: "Chalkduster")
-        movesTaken.text = "\(gameScene!.TotalMoves)"
+        movesTaken.text = "\(gameScene.TotalMoves)"
         movesTaken.fontSize = 72
         movesTaken.position = CGPoint(x: 72.486, y: -161.479)
         movesTaken.bringToFront()
@@ -59,7 +53,7 @@ class WinScreen: SKScene {
 
     func newGame() {
         print ("newGame: ", vara.curtLevel)
-        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ?? 1))
+        view!.presentScene(GameScene.level(levelNum: vara.curtLevel ))
     }
     
 
@@ -81,23 +75,23 @@ class WinScreen: SKScene {
     
     func UnlockStars() {
         
-        if (gameScene?.currentLevel == 1) {
+        if (gameScene.currentLevel == 1) {
             
-            if(gameScene?.TotalMoves ?? 0 <= 7) {
+            if(gameScene.TotalMoves ?? 0 <= 7) {
                 
                 
                 
             }
             
-        } else if (gameScene?.currentLevel == 2) {
+        } else if (gameScene.currentLevel == 2) {
             
-            if(gameScene?.TotalMoves ?? 0 <= 7) {
+            if(gameScene.TotalMoves <= 7) {
                 
                 
                 
             }
             
-        } else if(gameScene?.currentLevel == 3) {
+        } else if(gameScene.currentLevel == 3) {
             
             
             
