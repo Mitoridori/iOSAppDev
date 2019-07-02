@@ -138,8 +138,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func newGame() {
         vara.getCurrentLvl()
-        print ("Refreshed lvl: ", vara.curtLevel)
-         transitionToScene(level: vara.curtLevel)
+        transitionToScene(level: vara.curtLevel)
     }
     
     func levelSelect() {

@@ -59,12 +59,14 @@ class WinScreen: SKScene {
     
 
     func nextLevel(){
+        vara.getCurrentLvl()
+        if vara.curtLevel == 3 {
+            vara.SetLevel(i: 1)
+        }
+        else {
         vara.getlevel()
-        
+        }
         //Make confetiee
-
-        //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
-
         run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
