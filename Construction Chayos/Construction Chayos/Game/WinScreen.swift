@@ -52,24 +52,16 @@ class WinScreen: SKScene {
     
 
     func newGame() {
-        print ("newGame: ", vara.curtLevel)
+        print ("new Game: ", vara.curtLevel)
         view!.presentScene(GameScene.level(levelNum: vara.curtLevel ))
     }
     
 
     func nextLevel(){
-        var Nlvl = vara.curtLevel
-                vara.getlevel()
-      
+        vara.getlevel()
         
-        print ("Before lvl", Nlvl)
-        if Nlvl <= 3 {
-           Nlvl += 1
-            print("New Level" , Nlvl)
-        }
         //Make confetiee
-        //gameScene?.transitionToScene(level: gameScene?.currentLevel ?? 1)
-        //run(SKAction.afterDelay(0, runBlock: newGame))
+        run(SKAction.afterDelay(0, runBlock: newGame))
         
     }
     

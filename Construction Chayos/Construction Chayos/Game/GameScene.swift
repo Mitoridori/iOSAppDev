@@ -16,18 +16,9 @@ protocol InteractiveNode {
     func interact()
 }
 
-//struct PhysicsCategory {
-//    static let None:     UInt32 = 0 << 0
-//    static let Player:   UInt32 = 1 << 1
-//    static let Brick:    UInt32 = 1 << 2
-//    static let TrafficCone: UInt32 = 1 << 3
-//    static let Board:    UInt32 = 1 << 4
-//    
-//}
-
-
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var currentGameViewController: GameViewController?
     
     var playerNode:PlayerNode!
     var Brick: SKSpriteNode!
@@ -51,6 +42,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     var vara = Varaiables()
     var currentLevel: Int = 1
+
+    
     var brickManager:BrickManager? = nil
     
     var velocity = CGPoint.zero
@@ -65,8 +58,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 //    required init?(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)
-//
-//
+//        if let currentLevel =
+//            userData?.object(forKey: "GamesCurrentLevel") as? Int {
+//            self.currentLevel = currentLevel
+//        }
 //    }
     
     override func didMove(to view: SKView){
@@ -74,6 +69,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
+        
+        //currentLevel = userData?.object(forKey: "currentLevel"){self.currentLevel = currentLevel}
+        
         
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
@@ -86,9 +84,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
         
+        gameState = .start
         movesMadeLabel()
         update(0.5)
-        gameState = .start
+        
+
         
         addObservers()
     }
@@ -156,8 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didWin() {
-        
-        print ("level going into winscreen", currentLevel)
+        //print ("level going into winscreen", currentLevel, vara.curtLevel)
         let scene = SKScene(fileNamed: "WinScreen")
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit

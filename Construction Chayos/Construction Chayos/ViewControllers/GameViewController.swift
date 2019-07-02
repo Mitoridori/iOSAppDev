@@ -9,6 +9,7 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    var CurLvl: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
                 scene.size = CGSize(width: 1536, height: 2048)
-            
+                //scene.currentGameViewController = self as? GameScene
                 // Present the scene
                 view.presentScene(scene)
             }

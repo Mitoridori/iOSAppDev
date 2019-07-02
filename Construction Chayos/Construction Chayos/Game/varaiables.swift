@@ -9,23 +9,42 @@
 import SpriteKit
 
 class Varaiables: SKScene, InteractiveNode{
-    //var gameScene = GameScene()
+    
+    public var curtLevel = 1
+    
     func interact() {
-     // var curtLevel: Int = 1
+        //Loads Information stored as a key (which is called hello) and stores in in the variable hello
+        if(UserDefaults.standard.object(forKey: "curtLevel") != nil)
+        {
+            curtLevel = UserDefaults.standard.object(forKey: "curtLevel") as! Int
+        }
+        
+        print ("Varaiables", curtLevel)  
     }
     
+    func getCurrentLvl()-> Int{
+        if(UserDefaults.standard.object(forKey: "curtLevel") != nil)
+        {
+            curtLevel = UserDefaults.standard.object(forKey: "curtLevel") as! Int
+        }
+        
+        print ("Varaiables", curtLevel)
+        return curtLevel
+    }
     
-
-    public var curtLevel: Int = 1
+    func SetLevel(i: Int )
+    {
+        curtLevel = i
+        //Saves Information passed in (hello, ) in key (forKey: "hello"
+        UserDefaults.standard.set(curtLevel, forKey: "curtLevel")
+    }
 
     func getlevel() {
-
-        
-        
+        getCurrentLvl()
         curtLevel += 1
-
-        //return curtLevel
-
+        print("Get Level: ", curtLevel)
+        SetLevel(i: curtLevel)
+        
     }
     
 }
