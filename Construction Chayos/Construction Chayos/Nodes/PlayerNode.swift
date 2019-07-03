@@ -26,8 +26,8 @@ class PlayerNode: BrickParent {
         physicsBody!.categoryBitMask = PhysicsCategory.Player
         physicsBody!.collisionBitMask = PhysicsCategory.Brick | PhysicsCategory.Board | PhysicsCategory.TrafficCone
         physicsBody!.contactTestBitMask = PhysicsCategory.TrafficCone
-        dynBrick = false
-        dynamicBrick()
+        pinBrick = false
+        pinnedBrick()
     
     }
     

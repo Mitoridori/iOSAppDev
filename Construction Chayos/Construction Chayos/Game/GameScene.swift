@@ -74,12 +74,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if collision == PhysicsCategory.Player | PhysicsCategory.TrafficCone {
             didWin()
-            print("SUCCESS")}
+            //print("SUCCESS")
+        }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
-            
-            print ("Brick and board edge collision")}
+            //print ("Brick and board edge collision")
+        }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
-            print ("Bricks have collision") }
+            //print ("Bricks have collision")
+        }
     }
     
     func movesMadeLabel() {

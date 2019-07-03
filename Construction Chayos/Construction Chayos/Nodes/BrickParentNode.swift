@@ -10,7 +10,7 @@ import SpriteKit
 
 class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     
-    var dynBrick = false
+    var pinBrick = false
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var didTouch = false
@@ -35,8 +35,8 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         physicsBody!.categoryBitMask = PhysicsCategory.Brick
         physicsBody!.collisionBitMask = PhysicsCategory.Player | PhysicsCategory.Brick
         physicsBody!.contactTestBitMask = PhysicsCategory.Board | PhysicsCategory.Brick
-        dynBrick = false
-        dynamicBrick()
+        pinBrick = false
+        pinnedBrick()
         
     }
     
@@ -45,8 +45,8 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dynBrick = true
-        dynamicBrick()
+        pinBrick = true
+        pinnedBrick()
         isMoved = false
         
     }
@@ -84,9 +84,9 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
             return
             
         }
-        dynBrick = false
+        pinBrick = false
         didTouch = true
-        dynamicBrick()
+        pinnedBrick()
         if(isMoved == true) {
             
             if (brickManager != nil) {
@@ -103,11 +103,11 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         
     }
     
-    func dynamicBrick(){
-        if dynBrick == true{
+    func pinnedBrick(){
+        if pinBrick == true{
             physicsBody?.pinned = false // can move
         }
-        else if dynBrick == false {
+        else if pinBrick == false {
             physicsBody?.pinned = true //can not move
         }
         
@@ -121,7 +121,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
             dt = 0
         }
         lastUpdateTime = currentTime
-        dynamicBrick()
+        pinnedBrick()
     }
     
 }
