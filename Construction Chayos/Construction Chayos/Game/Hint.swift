@@ -12,7 +12,7 @@ class Hint: SKScene{
     
     var vara = Varaiables()
     var lvlHints: SKLabelNode!
-    let button = SKSpriteNode(imageNamed: "LevelSelect")
+    let button = SKSpriteNode(imageNamed: "Windows_17")
     
     
     func lvlCheck(){
@@ -35,13 +35,15 @@ class Hint: SKScene{
     func buildHint(){
         lvlHints = SKLabelNode(fontNamed: "Chalkduster")
         lvlHints.fontSize = 50
-        lvlHints.position = .zero
+        lvlHints.numberOfLines = 0
+        lvlHints.fontColor = SKColor.black
+        lvlHints.position = CGPoint(x: size.width/2, y: size.height/2)
         lvlHints.bringToFront()
         button.name = "btn"
-        button.size.height = 2000
-        button.size.width = 1500
-        button.alpha = 0.90
-        button.position = CGPoint(x: size.width/2, y: size.height/3)
+        button.size.height = 2048
+        button.size.width = 1536
+        button.alpha = 0.95
+        button.position = CGPoint(x: size.width/2, y: size.height/2)
         
         
         
@@ -50,34 +52,19 @@ class Hint: SKScene{
     func hintLvlOne(){
         
         buildHint()
-        lvlHints.text = "CR3, OU3, AL1, PD1, BD1, RR2, QD2, XR5"
+        lvlHints.text = "Bricks are here \n CR3, OU3, AL1, PD1 \n BD1, RR2, QD2, XR5 \n Key: \n Right, Left, Up, Down"
     }
     
     func hintLvlTwo(){
         
-        lvlHints = SKLabelNode(fontNamed: "Chalkduster")
+        buildHint()
         lvlHints.text = "Level Two hints!"
-        lvlHints.fontSize = 50
-        lvlHints.position = .zero
-        lvlHints.bringToFront()
-        button.name = "btn"
-        button.size.height = 177
-        button.size.width = 178
-        button.position = CGPoint(x: size.width/2, y: size.height/3)
-        
     }
     
     func hintLvlThree(){
         
-        lvlHints = SKLabelNode(fontNamed: "Chalkduster")
+        buildHint()
         lvlHints.text = "Level Three hints!"
-        lvlHints.fontSize = 50
-        lvlHints.position = .zero
-        lvlHints.bringToFront()
-        button.name = "btn"
-        button.size.height = 177
-        button.size.width = 178
-        button.position = CGPoint(x: size.width/2, y: size.height/3)
         
     }
     
