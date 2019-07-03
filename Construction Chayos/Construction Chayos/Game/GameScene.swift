@@ -97,7 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         movesMade = SKLabelNode(fontNamed: "Chalkduster")
         movesMade.text = "\(TotalMoves)"
         movesMade.fontSize = 72
-        movesMade.position = CGPoint(x: -118.561, y: 850)
+        movesMade.position = CGPoint(x: -118.561, y: 845)
         movesMade.bringToFront()
         addChild(movesMade)
 
