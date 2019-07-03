@@ -13,22 +13,22 @@ class Hint: SKScene{
     var vara = Varaiables()
     var lvlHints: SKLabelNode!
     let button = SKSpriteNode(imageNamed: "Windows_17")
-    var lvlpicture: SKSpriteNode!
+    var lvlPicture: SKSpriteNode!
     var key: SKLabelNode!
     
     
     func lvlCheck(){
         
         vara.getCurrentLvl()
-        if vara.getCurrentLvl() == 1
+        if vara.curtLevel == 1
         {
             hintLvlOne()
         }
-        else if vara.getCurrentLvl() == 2
+        else if vara.curtLevel == 2
         {
             hintLvlTwo()
         }
-        else if vara.getCurrentLvl() == 3
+        else if vara.curtLevel == 3
         {
             hintLvlThree()
         }
@@ -46,10 +46,10 @@ class Hint: SKScene{
         button.size.width = 1536
         button.alpha = 0.95
         button.position = CGPoint(x: size.width/2, y: size.height/2)
-        lvlpicture = SKSpriteNode(imageNamed: "gridBG\(vara.curtLevel)")
-        lvlpicture.position = CGPoint(x: size.width/2, y: -100)
-        lvlpicture.size.height = 400
-        lvlpicture.size.width = 400
+        lvlPicture = SKSpriteNode(imageNamed: "gridBG\(vara.curtLevel)")
+        lvlPicture.position = CGPoint(x: size.width/2, y: -100)
+        lvlPicture.size.height = 400
+        lvlPicture.size.width = 400
         key = SKLabelNode(fontNamed: "Chalkduster")
         key.fontSize = 50
         key.numberOfLines = 0

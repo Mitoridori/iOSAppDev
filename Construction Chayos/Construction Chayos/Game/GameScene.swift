@@ -213,14 +213,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addHint(){
         addChild(hint.button)
         addChild(hint.lvlHints)
-        addChild(hint.lvlpicture)
+        addChild(hint.lvlPicture)
         addChild(hint.key)
     }
     
     func removeHint(){
         hint.lvlHints.removeFromParent()
         hint.button.removeFromParent()
-        hint.lvlpicture.removeFromParent()
+        hint.lvlPicture.removeFromParent()
         hint.key.removeFromParent()
     }
     
