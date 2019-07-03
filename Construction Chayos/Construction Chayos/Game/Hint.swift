@@ -13,6 +13,7 @@ class Hint: SKScene{
     var vara = Varaiables()
     var lvlHints: SKLabelNode!
     let button = SKSpriteNode(imageNamed: "Windows_17")
+    var lvlpicture: SKSpriteNode!
     
     
     func lvlCheck(){
@@ -44,6 +45,11 @@ class Hint: SKScene{
         button.size.width = 1536
         button.alpha = 0.95
         button.position = CGPoint(x: size.width/2, y: size.height/2)
+        lvlpicture = SKSpriteNode(imageNamed: "gridBG\(vara.curtLevel)")
+        lvlpicture.position = CGPoint(x: size.width/2, y: -300)
+        lvlpicture.size.height = 400
+        lvlpicture.size.width = 400
+        
         
         
         
@@ -52,7 +58,7 @@ class Hint: SKScene{
     func hintLvlOne(){
         
         buildHint()
-        lvlHints.text = "Bricks are here \n CR3, OU3, AL1, PD1 \n BD1, RR2, QD2, XR5 \n Key: \n Right, Left, Up, Down"
+        lvlHints.text = "Solution \n CR3, OU3, AL1, PD1 \n BD1, RR2, QD2, XR5 \n Key: \n Right, Left, Up, Down"
     }
     
     func hintLvlTwo(){

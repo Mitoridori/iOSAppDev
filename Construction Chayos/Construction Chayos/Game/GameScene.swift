@@ -207,11 +207,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     hint.lvlCheck()
                     addChild(hint.button)
                     addChild(hint.lvlHints)
+                    addChild(hint.lvlpicture)
                     
                 }
                 else if name == "btn" {
                     hint.lvlHints.removeFromParent()
                     hint.button.removeFromParent()
+                    hint.lvlpicture.removeFromParent()
                 }
                 
             }
