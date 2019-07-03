@@ -13,11 +13,15 @@ class WinScreen: SKScene {
     
     var gameScene = GameScene()
     var movesTaken: SKLabelNode!
+    var congratsLabel: SKLabelNode!
+    var congratsMessage: SKLabelNode!
     var vara = Varaiables()
     var starOne: SKSpriteNode!
     var starTwo: SKSpriteNode!
     var starThree: SKSpriteNode!
     
+    
+    let sparkEmitter = SKEmitterNode(fileNamed: "WinningSparks.sks")!
     
     override func didMove(to view: SKView){
         
@@ -33,9 +37,9 @@ class WinScreen: SKScene {
         starOne = childNode(withName: "starOne") as? SKSpriteNode
         starTwo = childNode(withName: "starTwo") as? SKSpriteNode
         starThree = childNode(withName: "starThree") as? SKSpriteNode
-        
-        
+    
         movesTakenLabel()
+        UnlockStars()
         
     }
     
@@ -48,6 +52,35 @@ class WinScreen: SKScene {
         movesTaken.position = CGPoint(x: 72.486, y: -161.479)
         movesTaken.bringToFront()
         addChild(movesTaken)
+        
+    }
+    
+    func congratulationLabel() {
+        
+        congratsLabel = SKLabelNode(fontNamed: "Chalkduster")
+        congratsLabel.text = "Woo!"
+        congratsLabel.fontSize = 72
+        congratsLabel.position = CGPoint(x: -223.156, y: -313)
+        congratsLabel.bringToFront()
+        addChild(congratsLabel)
+        
+    }
+    
+    func congratulationMessage() {
+        
+        congratsMessage = SKLabelNode(fontNamed: "Chalkduster")
+        congratsMessage.text = "PERFECT SCORE!"
+        congratsMessage.fontSize = 40
+        congratsMessage.position = CGPoint(x: 100, y: -300)
+        congratsMessage.bringToFront()
+        addChild(congratsMessage)
+        
+    }
+    
+    func bestMoves() {
+        
+        congratulationLabel()
+        congratulationMessage()
         
     }
     
@@ -81,58 +114,106 @@ class WinScreen: SKScene {
         
     }
     
+    func sparkParticles(position: CGPoint) {
+        
+        var emitterToAdd = sparkEmitter.copy() as! SKEmitterNode
+        
+        emitterToAdd.position = position
+        let addEmitterAction = SKAction.run({self.addChild(emitterToAdd)})
+        var emitterDuration = CGFloat(sparkEmitter.numParticlesToEmit) * sparkEmitter.particleLifetime
+        let wait = SKAction.wait(forDuration: TimeInterval(emitterDuration))
+        let remove = SKAction.run({emitterToAdd.removeFromParent(); print("Emitter Removed")})
+        let sequence = SKAction.sequence([addEmitterAction, wait, remove])
+        
+        self.run(sequence)
+        
+    }
+    
     func UnlockStars() {
         
-        if (vara.curtLevel == 1) {
+        let locationOne = starOne.position
+        let locationTwo = starTwo.position
+        let locationThree = starThree.position
+        
+        switch vara.getCurrentLvl() {
             
-            if(gameScene.TotalMoves  <= 10) {
+        case 1:
+            if((gameScene.savedMoves + 1)  <= 10) {
                 
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                self.sparkParticles(position: locationThree)
+                bestMoves()
                 
+            } else if((gameScene.savedMoves + 1) > 10 && (gameScene.savedMoves + 1) <= 15) {
                 
-            } else if(gameScene.TotalMoves > 10 && gameScene.TotalMoves <= 15) {
-                
-                
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
                 
             } else {
                 
+                starTwo.isHidden = true
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
                 
             }
+            break
             
-        } else if (vara.curtLevel == 2) {
+        case 2:
+            if((gameScene.savedMoves + 1) <= 25) {
+                    
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                self.sparkParticles(position: locationThree)
+                bestMoves()
+
+            } else if((gameScene.savedMoves + 1) > 25 && (gameScene.savedMoves + 1) <= 30) {
+                    
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                    
+            } else {
+                    
+                starTwo.isHidden = true
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                    
+            }
+            break
             
-            if(gameScene.TotalMoves <= 25) {
+        case 3:
+            if((gameScene.savedMoves + 1) <= 21) {
                 
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                self.sparkParticles(position: locationThree)
+                bestMoves()
                 
+            } else if((gameScene.savedMoves + 1) > 21 && (gameScene.savedMoves + 1) <= 26) {
                 
-            } else if(gameScene.TotalMoves > 25 && gameScene.TotalMoves <= 30) {
-                
-                
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
                 
             } else {
                 
-                
-                
-            }
-            
-        } else if(vara.curtLevel == 3) {
-            
-            if(gameScene.TotalMoves <= 21) {
-                
-                
-                
-            } else if(gameScene.TotalMoves > 21 && gameScene.TotalMoves <= 26) {
-                
-                
-                
-            } else {
-                
-                
+                starTwo.isHidden = true
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
                 
             }
+            break
+            
+        default:
+            break
             
         }
         
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
