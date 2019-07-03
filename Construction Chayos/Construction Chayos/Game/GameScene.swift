@@ -22,16 +22,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Brick: SKSpriteNode!
     var movesMade: SKLabelNode!
     var tapToStart: SKLabelNode!
-    
-    var bricksNode: BricksNode!
-    var vbrickNode: VBrickNode!
-
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var TotalMoves = 0 {
         didSet {
             movesMade.text = "\(TotalMoves)"
-            
         }
     }
     var savedMoves = 0
@@ -39,9 +34,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hint = Hint()
     var brickManager:BrickManager? = nil
     
-    var velocity = CGPoint.zero
-    var lastTouchLocation: CGPoint?
-    var brickSpeed: CGFloat = 100
+    //var velocity = CGPoint.zero
+    //var lastTouchLocation: CGPoint?
+    //var brickSpeed: CGFloat = 100
     var hud = HUD()
     var gameState: GameState = .initial {
         didSet{
@@ -61,8 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             })
         gameState = .start
-        
-        
+
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
         
         brickManager = BrickManager()
@@ -201,15 +195,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 else if name == "Hint" {
                     hint.lvlCheck()
-                    addChild(hint.button)
-                    addChild(hint.lvlHints)
-                    addChild(hint.lvlpicture)
+                    addHint()
                     
                 }
                 else if name == "btn" {
-                    hint.lvlHints.removeFromParent()
-                    hint.button.removeFromParent()
-                    hint.lvlpicture.removeFromParent()
+                    removeHint()
                 }
                 
             }
@@ -219,6 +209,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
     }
+    
+    func addHint(){
+        addChild(hint.button)
+        addChild(hint.lvlHints)
+        addChild(hint.lvlpicture)
+        addChild(hint.key)
+    }
+    
+    func removeHint(){
+        hint.lvlHints.removeFromParent()
+        hint.button.removeFromParent()
+        hint.lvlpicture.removeFromParent()
+        hint.key.removeFromParent()
+    }
+    
     
     class func level(levelNum: Int) -> GameScene? {
         let scene = GameScene(fileNamed: "Level\(levelNum)")!
