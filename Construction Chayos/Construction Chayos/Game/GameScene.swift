@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     var savedMoves = 0
     var vara = Varaiables()
- 
+    var hint = Hint()
     var brickManager:BrickManager? = nil
     
     var velocity = CGPoint.zero
@@ -203,6 +203,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 else if name == "LevelSelect" {
                     levelSelect()
                 }
+                else if name == "Hint" {
+                    hint.lvlCheck()
+                    addChild(hint.button)
+                    addChild(hint.lvlHints)
+                    
+                }
+                else if name == "btn" {
+                    hint.lvlHints.removeFromParent()
+                    hint.button.removeFromParent()
+                }
+                
             }
             
         default:
