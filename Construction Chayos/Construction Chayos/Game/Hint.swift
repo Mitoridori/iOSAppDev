@@ -36,7 +36,7 @@ class Hint: SKScene{
     }
     func buildHint(){
         lvlHints = SKLabelNode(fontNamed: "Chalkduster")
-        lvlHints.fontSize = 50
+        lvlHints.fontSize = 60
         lvlHints.numberOfLines = 0
         lvlHints.fontColor = SKColor.black
         lvlHints.position = CGPoint(x: size.width/2, y: 300)
@@ -51,7 +51,7 @@ class Hint: SKScene{
         lvlPicture.size.height = 400
         lvlPicture.size.width = 400
         key = SKLabelNode(fontNamed: "Chalkduster")
-        key.fontSize = 50
+        key.fontSize = 60
         key.numberOfLines = 0
         key.fontColor = SKColor.black
         key.position = CGPoint(x: size.width/2, y: -500)
