@@ -77,6 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print("SUCCESS")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
+            
             //print ("Brick and board edge collision")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
