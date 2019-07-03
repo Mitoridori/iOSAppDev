@@ -11,8 +11,6 @@ import SpriteKit
 
 class MainScreen: SKScene {
     
-    var hello = 0
-    
     func playGame() {
         let scene = SKScene(fileNamed: "LevelSelect")
         scene?.size = CGSize(width: size.width, height: size.height)
@@ -26,13 +24,6 @@ class MainScreen: SKScene {
         let touch = touches.first
         let positionInScene = touch!.location(in: self)
         let touchedNode = self.atPoint(positionInScene)
-
-//        //Loads Information stored as a key (which is called hello) and stores in in the variable hello
-//        hello = UserDefaults.standard.object(forKey: "hello") as! Int
-//        hello += 1
-//        //Saves Information passed in (hello, ) in key (forKey: "hello"
-//        UserDefaults.standard.set(hello, forKey: "hello")
-        
         if let name = touchedNode.name {
             if name == "Play" {
                 playGame()

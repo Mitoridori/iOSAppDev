@@ -11,7 +11,45 @@ import SpriteKit
 class LevelSelector: SKScene {
     var gameScene = GameScene()
     var vara = Varaiables()
-    var hello = 0
+    var truck: SKSpriteNode!
+    let truckSmoke = SKEmitterNode(fileNamed: "smoke.sks")!
+    
+    override func didMove(to view: SKView){
+
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if let eventListenerNode = node as? EventListenerNode {
+                eventListenerNode.didMoveToScene()
+            }
+        })
+        
+        truck = childNode(withName: "truck") as? SKSpriteNode
+        MoveTruck()
+    
+    }
+    
+    func smokeEmitter(position: CGPoint) {
+        
+        var emitterToAdd = truckSmoke.copy() as! SKEmitterNode
+        
+        emitterToAdd.position = position
+        let addEmitterAction = SKAction.run({self.addChild(emitterToAdd)})
+        var emitterDuration = CGFloat(truckSmoke.numParticlesToEmit) * truckSmoke.particleLifetime
+        let wait = SKAction.wait(forDuration: TimeInterval(emitterDuration))
+        let remove = SKAction.run({emitterToAdd.removeFromParent(); print("Emitter Removed")})
+        let sequence = SKAction.sequence([addEmitterAction, wait, remove])
+        
+        self.run(sequence)
+        
+    }
+    
+    func MoveTruck(){
+        let truckLocation = truck.position
+        //truck.run(SKAction.moveTo(x: truck.position.x - 200, duration: 2.0))
+        self.smokeEmitter(position: truckLocation)
+    }
+    
+    
     
     func levelOne() {
         if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level1") as? GameScene {
