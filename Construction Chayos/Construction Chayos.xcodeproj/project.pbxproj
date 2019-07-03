@@ -23,6 +23,7 @@
 		6009E10322A99C720034FFC7 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10222A99C720034FFC7 /* Level2.sks */; };
 		6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* Level3.sks */; };
 		600DA06222C697E900651D5B /* WinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600DA06122C697E900651D5B /* WinScreen.swift */; };
+		60FE3B3E22CC1804008D4ACE /* WinningSparks.sks in Resources */ = {isa = PBXBuildFile; fileRef = 60FE3B3D22CC1804008D4ACE /* WinningSparks.sks */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -92,6 +93,7 @@
 		6009E10222A99C720034FFC7 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		6009E10422A99C8B0034FFC7 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		600DA06122C697E900651D5B /* WinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScreen.swift; sourceTree = "<group>"; };
+		60FE3B3D22CC1804008D4ACE /* WinningSparks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinningSparks.sks; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				DFFCB44222C52E7B0098AF23 /* smoke.sks */,
 				DFFCB44322C52E7B0098AF23 /* Assets.xcassets */,
+				60FE3B3D22CC1804008D4ACE /* WinningSparks.sks */,
 			);
 			path = Particles;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60FE3B3E22CC1804008D4ACE /* WinningSparks.sks in Resources */,
 				DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */,
 				DFFCB44422C52E7B0098AF23 /* smoke.sks in Resources */,
 				DF0AABB822A1A56D00C40685 /* Main.storyboard in Resources */,

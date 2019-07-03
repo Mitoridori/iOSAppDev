@@ -294,8 +294,7 @@ extension GameScene {
     }
     
     override func encode(with aCoder: NSCoder) {
-        
-        aCoder.encode(TotalMoves, forKey: "totalMovesTaken")
+
         aCoder.encode(vara.curtLevel, forKey: "GamesCurrentLevel")
         aCoder.encode(gameState.rawValue, forKey: "gamesState")
         super.encode(with: aCoder)
