@@ -20,11 +20,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     var playerNode:PlayerNode!
     var Brick: SKSpriteNode!
-    var levelTwo: SKSpriteNode!
-    var levelThree: SKSpriteNode!
-    var TCOne: SKSpriteNode!
-    var TCTwo: SKSpriteNode!
-    var TCThree: SKSpriteNode!
     var movesMade: SKLabelNode!
     var tapToStart: SKLabelNode!
     
@@ -67,8 +62,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             })
         gameState = .start
         
-        playerNode = childNode(withName: "Player") as? PlayerNode
+        
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
+        
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
         
