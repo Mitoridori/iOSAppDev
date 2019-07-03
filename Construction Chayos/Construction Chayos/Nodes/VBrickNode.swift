@@ -17,6 +17,6 @@ class VBrickNode: BrickParent {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        posMod = CGPoint(x:0, y: 1)
+        posMod = CGPoint(x:0, y: 4)
     }
 }

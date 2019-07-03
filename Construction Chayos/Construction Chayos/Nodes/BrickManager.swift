@@ -12,7 +12,7 @@ import SpriteKit
 class BrickManager: SKSpriteNode {
     
     var totalMoves = 0
-    var pauseChecker: GameScene? = nil
+    var gameSceneChecker: GameScene? = nil
     
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
@@ -30,7 +30,7 @@ class BrickManager: SKSpriteNode {
     func addMoves() {
         
         totalMoves = totalMoves + 1
-        pauseChecker?.setSavedMoves(i: totalMoves)
+        gameSceneChecker?.setSavedMoves(i: totalMoves)
 
         print("\(totalMoves)")
         
@@ -39,7 +39,7 @@ class BrickManager: SKSpriteNode {
     
     func FindAllBricks(gameScene: GameScene)
     {
-        pauseChecker = gameScene
+        gameSceneChecker = gameScene
         var i = 0
         gameScene.enumerateChildNodes(withName: "Brick")
         {

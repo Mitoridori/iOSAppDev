@@ -24,10 +24,6 @@ class WinScreen: SKScene {
     let sparkEmitter = SKEmitterNode(fileNamed: "WinningSparks.sks")!
     
     override func didMove(to view: SKView){
-        
-        let playableArea = CGRect(x: -480, y: -480, width: 960, height: 960)
-        physicsBody = SKPhysicsBody(edgeLoopFrom: playableArea)
-        
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()

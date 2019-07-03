@@ -16,6 +16,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     var didTouch = false
     var posMod = CGPoint(x: 1, y: 0)
     var brickManager:BrickManager? = nil
+    var isMoved: Bool = false
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -46,7 +47,7 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dynBrick = true
         dynamicBrick()
-       // gameScene.addSmoke()
+        isMoved = false
         
     }
     
@@ -65,6 +66,10 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
 
             let previousLocation = touch.previousLocation(in: self)
 
+            if(location != previousLocation) {
+                
+                isMoved = true
+            }
             
             position = position + ((location - previousLocation) * posMod)
             
@@ -82,15 +87,19 @@ class BrickParent: SKSpriteNode, EventListenerNode, InteractiveNode {
         dynBrick = false
         didTouch = true
         dynamicBrick()
-        if (brickManager != nil) {
-            brickManager?.addMoves()
+        if(isMoved == true) {
             
+            if (brickManager != nil) {
+                brickManager?.addMoves()
+                
+            }
+            isMoved = false
         }
     }
     
     func isGamePaused() -> Bool {
         
-        return brickManager?.pauseChecker?.isPaused ?? false
+        return brickManager?.gameSceneChecker?.isPaused ?? false
         
     }
     
