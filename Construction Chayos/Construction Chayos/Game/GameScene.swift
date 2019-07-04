@@ -33,10 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var vara = Varaiables()
     var hint = Hint()
     var brickManager:BrickManager? = nil
-    
-    //var velocity = CGPoint.zero
-    //var lastTouchLocation: CGPoint?
-    //var brickSpeed: CGFloat = 100
+    let truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
     var hud = HUD()
     var gameState: GameState = .initial {
         didSet{
@@ -55,6 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 eventListenerNode.didMoveToScene()
                 }
             })
+        playBackgroundMusic(name: "backgroundSound.mp3")
         gameState = .start
 
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
@@ -73,7 +71,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Player | PhysicsCategory.TrafficCone {
+            run(SKAction.sequence([truckHorn, truckHorn]))
+            SKAction.wait(forDuration: 3.0)
             didWin()
+            
             //print("SUCCESS")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
@@ -84,6 +85,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print ("Bricks have collision")
         }
     }
+    
+    func playBackgroundMusic(name: String){
+        if let backgroundMusic = childNode(withName: "backgroundMusic"){backgroundMusic.removeFromParent()
+        }
+        let music = SKAudioNode (fileNamed: name)
+        music.name = "BackgroundMusic"
+        music.autoplayLooped = true
+        addChild(music)
+    }
+    
     
     func movesMadeLabel() {
 

@@ -55,6 +55,8 @@
 		DFFCEB3422CD38AD00EAB5DB /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEB2822CD38AD00EAB5DB /* SKTAudio.swift */; };
 		DFFCEB3522CD38AD00EAB5DB /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEB2922CD38AD00EAB5DB /* Vector3.swift */; };
 		DFFCEB3622CD38AD00EAB5DB /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFCEB2A22CD38AD00EAB5DB /* CGFloat+Extensions.swift */; };
+		DFFFF82D22CE676200BD6C3E /* backgroundSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFFFF82C22CE676200BD6C3E /* backgroundSound.mp3 */; };
+		DFFFF82F22CE67CA00BD6C3E /* horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFFFF82E22CE67CA00BD6C3E /* horn.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		DFFCEB2822CD38AD00EAB5DB /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		DFFCEB2922CD38AD00EAB5DB /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		DFFCEB2A22CD38AD00EAB5DB /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		DFFFF82C22CE676200BD6C3E /* backgroundSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundSound.mp3; sourceTree = "<group>"; };
+		DFFFF82E22CE67CA00BD6C3E /* horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horn.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		DF0AABAB22A1A56D00C40685 /* Construction Chayos */ = {
 			isa = PBXGroup;
 			children = (
+				DFFFF82922CE661F00BD6C3E /* Sound */,
 				DFFCEB1E22CD38AD00EAB5DB /* SKTUtils */,
 				DFFCB44122C52DFC0098AF23 /* Particles */,
 				60F7887222B17E4700E138F8 /* ViewControllers */,
@@ -294,6 +299,15 @@
 				DFB3E9C922C2A7D90052848A /* ConeNode.swift */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		DFFFF82922CE661F00BD6C3E /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				DFFFF82E22CE67CA00BD6C3E /* horn.mp3 */,
+				DFFFF82C22CE676200BD6C3E /* backgroundSound.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +418,7 @@
 				DFEDE74522A89379002405D8 /* PlayScene.sks in Resources */,
 				DF0AABB822A1A56D00C40685 /* Main.storyboard in Resources */,
 				DF0AABBA22A1A56E00C40685 /* Assets.xcassets in Resources */,
+				DFFFF82D22CE676200BD6C3E /* backgroundSound.mp3 in Resources */,
 				6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */,
 				DF0AABBD22A1A56E00C40685 /* LaunchScreen.storyboard in Resources */,
 				6009E10122A99C510034FFC7 /* Level1.sks in Resources */,
@@ -416,6 +431,7 @@
 				6009A04022BAA80600F206A0 /* LevelSelect.sks in Resources */,
 				DFFCEB1C22CD1A9600EAB5DB /* smoke.sks in Resources */,
 				DFFCB44522C52E7B0098AF23 /* Assets.xcassets in Resources */,
+				DFFFF82F22CE67CA00BD6C3E /* horn.mp3 in Resources */,
 				6009E10322A99C720034FFC7 /* Level2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
