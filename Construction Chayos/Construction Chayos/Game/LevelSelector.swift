@@ -47,8 +47,8 @@ class LevelSelector: SKScene {
 
     func MoveTruck(){
         truck.run(SKAction.sequence([SKAction.run(smokeEmitter)]))
-        truckSmoke.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 200, duration: 2.0)]))
-        truck.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 200, duration: 2.0)]))
+        truckSmoke.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 580, duration: 3.0)]))
+        truck.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 580, duration: 3.0)]))
 
     }
     
