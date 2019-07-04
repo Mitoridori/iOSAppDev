@@ -68,7 +68,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameState = .start
         movesMadeLabel()
         beginGameLabel()
-        addObservers()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -261,97 +260,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return scene
     }
 
-}
-
-extension GameScene {
-    func applicationDidBecomeActive() {
-        print("* applicationDidBecomeActive")
-        GameScene.loadGame()
-        
-    }
-    
-    func applicationWillResignActive() {
-        print("* ResignActive")
-        
-    }
-    
-    func applicationDidEnterBackground() {
-        print("* entered background")
-        if gameState != .quit {
-            saveGame()
-            
-        }
-        
-    }
-    
-    func addObservers() {
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.applicationDidBecomeActive()
-        }
-        notificationCenter.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.applicationWillResignActive()
-            
-        }
-        notificationCenter.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.applicationDidEnterBackground()
-            
-            
-        }
-        
-    }
-    
-}
-
-extension GameScene {
-    
-    func saveGame() {
-        
-        let fileManager = FileManager.default
-        guard let directory = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).first
-            else {return}
-        let saveURL = directory.appendingPathComponent("SavedGames")
-        
-        do {
-            try fileManager.createDirectory(atPath: saveURL.path, withIntermediateDirectories: true, attributes: nil)
-        } catch let error as NSError {
-            
-            fatalError("Failed to create directoy: \(error.debugDescription)")
-        }
-        
-        let fileURL = saveURL.appendingPathComponent("saved-game")
-        print("* Saving: \(fileURL.path)")
-        
-        NSKeyedArchiver.archiveRootObject(self, toFile: fileURL.path)
-        
-    }
-    
-    override func encode(with aCoder: NSCoder) {
-
-        aCoder.encode(vara.curtLevel, forKey: "GamesCurrentLevel")
-        aCoder.encode(gameState.rawValue, forKey: "gamesState")
-        super.encode(with: aCoder)
-        
-    }
-    
-    class func loadGame() -> SKScene? {
-        
-        print("* Loading")
-        var scene: SKScene?
-        
-        let fileManager = FileManager.default
-        guard let directory = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).first
-            else{return nil}
-        
-        let url = directory.appendingPathComponent("SavedGames/saved-game")
-        
-        if FileManager.default.fileExists(atPath: url.path) {
-            scene = NSKeyedUnarchiver.unarchiveObject(withFile: url.path) as? GameScene
-            _ = try? fileManager.removeItem(at: url)
-            
-        }
-        return scene
-    }
-    
 }
 
