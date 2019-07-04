@@ -53,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 eventListenerNode.didMoveToScene()
                 }
             })
-        playBackgroundMusic(name: "backgroundSound.mp3")
+        SKTAudio.sharedInstance().playBackgroundMusic("backgroundSound.mp3")
         gameState = .start
 
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
@@ -86,16 +86,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print ("Bricks have collision")
         }
     }
-    
-    func playBackgroundMusic(name: String){
-        if let backgroundMusic = childNode(withName: "backgroundMusic"){backgroundMusic.removeFromParent()
-        }
-        let music = SKAudioNode (fileNamed: name)
-        music.name = "BackgroundMusic"
-        music.autoplayLooped = true
-        addChild(music)
-    }
-    
     
     func movesMadeLabel() {
 
