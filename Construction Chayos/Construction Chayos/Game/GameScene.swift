@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Brick: SKSpriteNode!
     var movesMade: SKLabelNode!
     var tapToStart: SKLabelNode!
+    var toggleAudioSwitchOff: SKSpriteNode!
+    var toggleAudioSwitchOn: SKSpriteNode!
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var TotalMoves = 0 {
@@ -33,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var vara = Varaiables()
     var hint = Hint()
     var brickManager:BrickManager? = nil
-    let truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
+    var truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
     let tinHits = SKAction.playSoundFileNamed("tinSound.mp3", waitForCompletion: true)
     var hud = HUD()
     var gameState: GameState = .initial {
@@ -57,6 +59,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameState = .start
 
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
+        toggleAudioSwitchOff = childNode(withName: "Mute") as? SKSpriteNode
+        toggleAudioSwitchOn = childNode(withName: "Unmute") as? SKSpriteNode
         
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
@@ -169,6 +173,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.presentScene(scene)
     }
     
+    func toggleAudioOff() {
+        
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        
+    }
+    
+    func toggleAudioOn() {
+
+        SKTAudio.sharedInstance().resumeBackgroundMusic()
+        
+    }
+    
     func transitionToScene(level: Int){
         guard let newScene = SKScene(fileNamed: "Level\(level)")
             as? GameScene else{
@@ -205,6 +221,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 else if name == "btn" {
                     removeHint()
+                }
+                else if name == "Mute" {
+                    toggleAudioOff()
+                    
+                }
+                else if name == "Unmute" {
+                    toggleAudioOn()
+                    
                 }
                 
             }

@@ -13,6 +13,7 @@ class LevelSelector: SKScene {
     var vara = Varaiables()
     var truck: SKSpriteNode!
     var toggleAudioOnOff: SKSpriteNode!
+    
     let truckSmoke = SKEmitterNode(fileNamed: "smoke.sks")!
     
     override func didMove(to view: SKView){
@@ -25,9 +26,8 @@ class LevelSelector: SKScene {
         })
         
         truck = childNode(withName: "truck") as? SKSpriteNode
-        toggleAudioOnOff = childNode(withName: "Mute/unmute") as? SKSpriteNode
+
         MoveTruck()
-    
     }
     
     func smokeEmitter(position: CGPoint) {
@@ -74,15 +74,6 @@ class LevelSelector: SKScene {
             scene.size = CGSize(width: size.width, height: size.height)
             scene.scaleMode = .aspectFit
             view!.presentScene(scene)
-        }
-        
-    }
-    
-    func toggleAudio() {
-        
-        if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_64")) {
-            
-            
         }
         
     }
