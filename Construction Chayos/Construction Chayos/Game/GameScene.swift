@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Brick: SKSpriteNode!
     var movesMade: SKLabelNode!
     var tapToStart: SKLabelNode!
+    var toggleAudioOnOff: SKSpriteNode!
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var TotalMoves = 0 {
@@ -33,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var vara = Varaiables()
     var hint = Hint()
     var brickManager:BrickManager? = nil
-    let truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
+    var truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
     let tinHits = SKAction.playSoundFileNamed("tinSound.mp3", waitForCompletion: true)
     var hud = HUD()
     var gameState: GameState = .initial {
@@ -57,6 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameState = .start
 
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
+        toggleAudioOnOff = childNode(withName: "Mute/unmute") as? SKSpriteNode
         
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
@@ -179,6 +181,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.presentScene(scene)
     }
     
+    func toggleAudio() {
+        
+        if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_64")) {
+            
+            SKTAudio.sharedInstance().pauseBackgroundMusic()
+            toggleAudioOnOff.texture = SKTexture(imageNamed: "Button_16")
+            
+        } else if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_16")) {
+            
+            SKTAudio.sharedInstance().resumeBackgroundMusic()
+            toggleAudioOnOff.texture = SKTexture(imageNamed: "Button_64")
+            
+        }
+        
+    }
+    
     func transitionToScene(level: Int){
         guard let newScene = SKScene(fileNamed: "Level\(level)")
             as? GameScene else{
@@ -215,6 +233,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 else if name == "btn" {
                     removeHint()
+                }
+                else if name == "Mute/unmute" {
+                    
+                    toggleAudio()
+                    
                 }
                 
             }
