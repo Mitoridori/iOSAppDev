@@ -14,7 +14,7 @@ class LevelSelector: SKScene {
     var truck: SKSpriteNode!
     var toggleAudioOnOff: SKSpriteNode!
     
-    let truckSmoke = SKEmitterNode(fileNamed: "smoke.sks")!
+    var truckSmoke = SKEmitterNode(fileNamed: "smoke.sks")!
     
     override func didMove(to view: SKView){
 
@@ -30,11 +30,11 @@ class LevelSelector: SKScene {
         MoveTruck()
     }
     
-    func smokeEmitter(position: CGPoint) {
+    func smokeEmitter() {
         
         var emitterToAdd = truckSmoke.copy() as! SKEmitterNode
         
-        emitterToAdd.position = position
+        emitterToAdd.position = truck.position
         let addEmitterAction = SKAction.run({self.addChild(emitterToAdd)})
         var emitterDuration = CGFloat(truckSmoke.numParticlesToEmit) * truckSmoke.particleLifetime
         let wait = SKAction.wait(forDuration: TimeInterval(emitterDuration))
@@ -44,14 +44,13 @@ class LevelSelector: SKScene {
         self.run(sequence)
         
     }
-    
+
     func MoveTruck(){
-        let truckLocation = truck.position
-        //truck.run(SKAction.moveTo(x: truck.position.x - 200, duration: 2.0))
-        self.smokeEmitter(position: truckLocation)
+        truck.run(SKAction.sequence([SKAction.run(smokeEmitter)]))
+        truckSmoke.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 580, duration: 3.0)]))
+        truck.run(SKAction.sequence([SKAction.moveTo(x: truck.position.x - 580, duration: 3.0)]))
+
     }
-    
-    
     
     func levelOne() {
         if let scene = GameScene.loadGame() ?? SKScene(fileNamed: "Level1") as? GameScene {

@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.365683"
+            timestampString = "583959736.843369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "GameScene"
-            landmarkType = "3">
+            landmarkName = "update(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.365743"
+            timestampString = "583959736.843433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "newGame()"
-            landmarkType = "7">
+            landmarkName = "GameScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -197,12 +197,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.365824"
+            timestampString = "583959736.843532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "saveTotalMoves()"
+            landmarkName = "getTotalMoves()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -213,12 +213,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.36587"
+            timestampString = "583959736.843594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
-            landmarkName = "saveTotalMoves()"
+            landmarkName = "getTotalMoves()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -261,12 +261,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.365944"
+            timestampString = "583959736.843694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "touchesBegan(_:with:)"
+            landmarkName = "transitionToScene(level:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -277,7 +277,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Construction Chayos/Game/GameScene.swift"
-            timestampString = "583956359.365988"
+            timestampString = "583959736.843765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
