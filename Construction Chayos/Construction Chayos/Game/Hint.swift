@@ -46,10 +46,10 @@ class Hint: SKScene{
         button.size.width = 1536
         button.alpha = 0.95
         button.position = CGPoint(x: size.width/2, y: size.height/2)
-        lvlPicture = SKSpriteNode(imageNamed: "gridBG\(vara.curtLevel)")
-        lvlPicture.position = CGPoint(x: size.width/2, y: -100)
-        lvlPicture.size.height = 400
-        lvlPicture.size.width = 400
+        lvlPicture = SKSpriteNode(imageNamed: "lvl\(vara.curtLevel)")
+        lvlPicture.position = CGPoint(x: size.width/2, y: -50)
+        lvlPicture.size.height = 500
+        lvlPicture.size.width = 500
         key = SKLabelNode(fontNamed: "Chalkduster")
         key.fontSize = 60
         key.numberOfLines = 0
