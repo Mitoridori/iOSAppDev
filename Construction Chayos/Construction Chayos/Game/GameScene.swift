@@ -266,6 +266,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 extension GameScene {
     func applicationDidBecomeActive() {
         print("* applicationDidBecomeActive")
+        GameScene.loadGame()
         
     }
     
