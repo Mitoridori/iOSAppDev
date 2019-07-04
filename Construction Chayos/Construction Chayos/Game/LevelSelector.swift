@@ -12,6 +12,7 @@ class LevelSelector: SKScene {
     var gameScene = GameScene()
     var vara = Varaiables()
     var truck: SKSpriteNode!
+    var toggleAudioOnOff: SKSpriteNode!
     let truckSmoke = SKEmitterNode(fileNamed: "smoke.sks")!
     
     override func didMove(to view: SKView){
@@ -24,6 +25,7 @@ class LevelSelector: SKScene {
         })
         
         truck = childNode(withName: "truck") as? SKSpriteNode
+        toggleAudioOnOff = childNode(withName: "Mute/unmute") as? SKSpriteNode
         MoveTruck()
     
     }
@@ -76,6 +78,15 @@ class LevelSelector: SKScene {
         
     }
     
+    func toggleAudio() {
+        
+        if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_64")) {
+            
+            
+        }
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         let positionInScene = touch!.location(in: self)
@@ -87,17 +98,22 @@ class LevelSelector: SKScene {
                 gameScene.setSavedMoves(i: 0)
                 vara.getCurrentLvl()
             }
-            if name == "Level2" {
+            else if name == "Level2" {
                 levelTwo()
                 vara.SetLevel(i: 2)
                 gameScene.setSavedMoves(i: 0)
                 vara.getCurrentLvl()
             }
-            if name == "Level3" {
+            else if name == "Level3" {
                 levelThree()
                 vara.SetLevel(i: 3)
                 gameScene.setSavedMoves(i: 0)
                 vara.getCurrentLvl()
+            }
+            else if name == "Mute/unmute" {
+                
+                
+                
             }
         }
     }
