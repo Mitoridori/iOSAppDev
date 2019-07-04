@@ -22,7 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Brick: SKSpriteNode!
     var movesMade: SKLabelNode!
     var tapToStart: SKLabelNode!
-    var toggleAudioOnOff: SKSpriteNode!
+    var toggleAudioSwitchOff: SKSpriteNode!
+    var toggleAudioSwitchOn: SKSpriteNode!
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     var TotalMoves = 0 {
@@ -58,7 +59,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameState = .start
 
         Brick = self.childNode(withName: "Brick") as? SKSpriteNode
-        toggleAudioOnOff = childNode(withName: "Mute/unmute") as? SKSpriteNode
+        toggleAudioSwitchOff = childNode(withName: "Mute") as? SKSpriteNode
+        toggleAudioSwitchOn = childNode(withName: "Unmute") as? SKSpriteNode
         
         brickManager = BrickManager()
         brickManager?.FindAllBricks(gameScene: self)
@@ -171,19 +173,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.presentScene(scene)
     }
     
-    func toggleAudio() {
+    func toggleAudioOff() {
         
-        if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_64")) {
-            
-            SKTAudio.sharedInstance().pauseBackgroundMusic()
-            toggleAudioOnOff.texture = SKTexture(imageNamed: "Button_16")
-            
-        } else if (toggleAudioOnOff.texture == SKTexture(imageNamed: "Button_16")) {
-            
-            SKTAudio.sharedInstance().resumeBackgroundMusic()
-            toggleAudioOnOff.texture = SKTexture(imageNamed: "Button_64")
-            
-        }
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        
+    }
+    
+    func toggleAudioOn() {
+
+        SKTAudio.sharedInstance().resumeBackgroundMusic()
         
     }
     
@@ -224,9 +222,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 else if name == "btn" {
                     removeHint()
                 }
-                else if name == "Mute/unmute" {
+                else if name == "Mute" {
+                    toggleAudioOff()
                     
-                    toggleAudio()
+                }
+                else if name == "Unmute" {
+                    toggleAudioOn()
                     
                 }
                 
