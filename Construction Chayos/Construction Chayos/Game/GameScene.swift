@@ -34,6 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hint = Hint()
     var brickManager:BrickManager? = nil
     let truckHorn = SKAction.playSoundFileNamed("horn.mp3", waitForCompletion: true)
+    let tinHits = SKAction.playSoundFileNamed("tinSound.mp3", waitForCompletion: true)
     var hud = HUD()
     var gameState: GameState = .initial {
         didSet{
@@ -71,17 +72,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Player | PhysicsCategory.TrafficCone {
-            run(SKAction.sequence([truckHorn, truckHorn]))
-            SKAction.wait(forDuration: 3.0)
-            didWin()
+            run(SKAction.sequence([truckHorn, truckHorn, SKAction.run(didWin) ]))
+            //didWin()
             
             //print("SUCCESS")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
-            
+            run(SKAction.sequence([tinHits]))
             //print ("Brick and board edge collision")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
+            run(SKAction.sequence([tinHits]))
             //print ("Bricks have collision")
         }
     }
