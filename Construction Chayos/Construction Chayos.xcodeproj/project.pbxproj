@@ -23,6 +23,7 @@
 		6009E10522A99C8B0034FFC7 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6009E10422A99C8B0034FFC7 /* Level3.sks */; };
 		600DA06222C697E900651D5B /* WinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600DA06122C697E900651D5B /* WinScreen.swift */; };
 		60FE3B3E22CC1804008D4ACE /* WinningSparks.sks in Resources */ = {isa = PBXBuildFile; fileRef = 60FE3B3D22CC1804008D4ACE /* WinningSparks.sks */; };
+		DF0584EE22CFCB6000AAA089 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0584ED22CFCB6000AAA089 /* Level4.sks */; };
 		DF0AABAD22A1A56D00C40685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */; };
 		DF0AABB122A1A56D00C40685 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF0AABB022A1A56D00C40685 /* Actions.sks */; };
 		DF0AABB322A1A56D00C40685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AABB222A1A56D00C40685 /* GameScene.swift */; };
@@ -94,6 +95,7 @@
 		6009E10422A99C8B0034FFC7 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		600DA06122C697E900651D5B /* WinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinScreen.swift; sourceTree = "<group>"; };
 		60FE3B3D22CC1804008D4ACE /* WinningSparks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinningSparks.sks; sourceTree = "<group>"; };
+		DF0584ED22CFCB6000AAA089 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		DF0AABA922A1A56D00C40685 /* Construction Chayos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Construction Chayos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0AABAC22A1A56D00C40685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF0AABB022A1A56D00C40685 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				600689B122B81CC200235DD2 /* WinScreen.sks */,
 				6009A03D22BAA7EE00F206A0 /* MainScreen.sks */,
 				6009A03F22BAA80600F206A0 /* LevelSelect.sks */,
+				DF0584ED22CFCB6000AAA089 /* Level4.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				6009A04022BAA80600F206A0 /* LevelSelect.sks in Resources */,
 				DFFCEB1C22CD1A9600EAB5DB /* smoke.sks in Resources */,
 				DFFCB44522C52E7B0098AF23 /* Assets.xcassets in Resources */,
+				DF0584EE22CFCB6000AAA089 /* Level4.sks in Resources */,
 				DFFFF82F22CE67CA00BD6C3E /* horn.mp3 in Resources */,
 				DFFFF83122CE6E4D00BD6C3E /* tinSound.mp3 in Resources */,
 				6009E10322A99C720034FFC7 /* Level2.sks in Resources */,

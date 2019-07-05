@@ -98,7 +98,7 @@ class WinScreen: SKScene {
 
     func nextLevel(){
         vara.getCurrentLvl()
-        if vara.curtLevel == 3 {
+        if vara.curtLevel == 4 {
             vara.SetLevel(i: 1)
         }
         else {
@@ -186,6 +186,29 @@ class WinScreen: SKScene {
                 bestMoves()
                 
             } else if((gameScene.savedMoves + 1) > 21 && (gameScene.savedMoves + 1) <= 26) {
+                
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                
+            } else {
+                
+                starTwo.isHidden = true
+                starThree.isHidden = true
+                self.sparkParticles(position: locationOne)
+                
+            }
+            break
+            
+        case 4:
+            if((gameScene.savedMoves + 1) <= 10) {
+                
+                self.sparkParticles(position: locationOne)
+                self.sparkParticles(position: locationTwo)
+                self.sparkParticles(position: locationThree)
+                bestMoves()
+                
+            } else if((gameScene.savedMoves + 1) > 10 && (gameScene.savedMoves + 1) <= 14) {
                 
                 starThree.isHidden = true
                 self.sparkParticles(position: locationOne)

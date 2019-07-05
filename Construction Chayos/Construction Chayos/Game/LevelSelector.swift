@@ -73,6 +73,13 @@ class LevelSelector: SKScene {
         view!.presentScene(scene)
         
     }
+    func levelFour() {
+        let scene = SKScene(fileNamed: "Level4")
+        scene?.size = CGSize(width: size.width, height: size.height)
+        scene?.scaleMode = .aspectFit
+        view!.presentScene(scene)
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
@@ -97,7 +104,12 @@ class LevelSelector: SKScene {
                 gameScene.setSavedMoves(i: 0)
                 vara.getCurrentLvl()
             }
-
+            else if name == "Level4" {
+                levelFour()
+                vara.SetLevel(i: 4)
+                gameScene.setSavedMoves(i: 0)
+                vara.getCurrentLvl()
+            }
         }
     }
     

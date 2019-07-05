@@ -32,7 +32,10 @@ class Hint: SKScene{
         {
             hintLvlThree()
         }
-        
+        else if vara.curtLevel == 4
+        {
+            hintLvlFour()
+        }
     }
     func buildHint(){
         lvlHints = SKLabelNode(fontNamed: "Chalkduster")
@@ -78,7 +81,12 @@ class Hint: SKScene{
         lvlHints.text = "Solution \n PU2, QL2, XR1, BU4, XL1 \n AL1, PD3, QR3, OU1, AL3 \n OD1, QL3, PU3, XR1, BD4, \n XL1, PD3, RR3, QR3, OU3 \n XL5"
         
     }
-    
+    func hintLvlFour(){
+        
+        buildHint()
+        lvlHints.text = "Solution \n To come"
+        
+    }
     
     
 }
