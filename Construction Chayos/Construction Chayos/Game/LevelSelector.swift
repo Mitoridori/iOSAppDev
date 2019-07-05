@@ -52,25 +52,21 @@ class LevelSelector: SKScene {
 
     }
     
-    func levelOne() {
-        let scene = SKScene(fileNamed: "Level1")
+    func levels(name: String) {
+        let scene = SKScene(fileNamed: name)
         scene?.size = CGSize(width: size.width, height: size.height)
         scene?.scaleMode = .aspectFit
         view!.presentScene(scene)
         
     }
-    func levelTwo() {
-        let scene = SKScene(fileNamed: "Level2")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+    
+    func loadLevel(name: String, i: Int) {
         
-    }
-    func levelThree() {
-        let scene = SKScene(fileNamed: "Level3")
-        scene?.size = CGSize(width: size.width, height: size.height)
-        scene?.scaleMode = .aspectFit
-        view!.presentScene(scene)
+        levels(name: name)
+        vara.SetLevel(i: i)
+        gameScene.setSavedMoves(i: 0)
+        vara.getCurrentLvl()
+        
         
     }
     
@@ -80,22 +76,13 @@ class LevelSelector: SKScene {
         let touchedNode = self.atPoint(positionInScene)
         if let name = touchedNode.name {
             if name == "Level1" {
-                levelOne()
-                vara.SetLevel(i: 1)
-                gameScene.setSavedMoves(i: 0)
-                vara.getCurrentLvl()
+                loadLevel(name: "Level1", i: 1)
             }
             else if name == "Level2" {
-                levelTwo()
-                vara.SetLevel(i: 2)
-                gameScene.setSavedMoves(i: 0)
-                vara.getCurrentLvl()
+                loadLevel(name: "Level2", i: 2)
             }
             else if name == "Level3" {
-                levelThree()
-                vara.SetLevel(i: 3)
-                gameScene.setSavedMoves(i: 0)
-                vara.getCurrentLvl()
+                loadLevel(name: "Level3", i: 3)
             }
 
         }
