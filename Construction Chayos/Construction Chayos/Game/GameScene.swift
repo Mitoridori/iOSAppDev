@@ -76,17 +76,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if collision == PhysicsCategory.Player | PhysicsCategory.TrafficCone {
             run(SKAction.sequence([truckHorn, truckHorn, SKAction.run(didWin) ]))
-            //didWin()
-            
-            //print("SUCCESS")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Board {
             run(SKAction.sequence([tinHits]))
-            //print ("Brick and board edge collision")
         }
         if collision == PhysicsCategory.Brick | PhysicsCategory.Brick {
             run(SKAction.sequence([tinHits]))
-            //print ("Bricks have collision")
         }
     }
     
@@ -113,9 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func getTotalMoves() {
-
         TotalMoves = brickManager!.totalMoves
-
     }
     
     func saveTotalMoves() {

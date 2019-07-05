@@ -91,7 +91,6 @@ class WinScreen: SKScene {
     
 
     func newGame() {
-        print ("newGame: ", vara.curtLevel)
         view!.presentScene(GameScene.level(levelNum: vara.curtLevel))
 
     }
@@ -105,7 +104,6 @@ class WinScreen: SKScene {
         else {
         vara.getlevel()
         }
-        //Make confetiee
         run(SKAction.afterDelay(0, runBlock: newGame))
         
     }

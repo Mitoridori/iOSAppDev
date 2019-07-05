@@ -97,11 +97,7 @@ class LevelSelector: SKScene {
                 gameScene.setSavedMoves(i: 0)
                 vara.getCurrentLvl()
             }
-            else if name == "Mute/unmute" {
-                
-                
-                
-            }
+
         }
     }
     

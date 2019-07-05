@@ -13,13 +13,7 @@ class Varaiables: SKScene, InteractiveNode{
     public var curtLevel = 1
     
     func interact() {
-//        //Loads Information stored as a key (which is called hello) and stores in in the variable hello
-//        if(UserDefaults.standard.object(forKey: "curtLevel") != nil)
-//        {
-//            curtLevel = UserDefaults.standard.object(forKey: "curtLevel") as! Int
-//        }
-//
-//        print ("Varaiables", curtLevel)
+
     }
     
     func getCurrentLvl()-> Int{
@@ -33,7 +27,6 @@ class Varaiables: SKScene, InteractiveNode{
     func SetLevel(i: Int )
     {
         curtLevel = i
-        //Saves Information passed in (hello, ) in key (forKey: "hello"
         UserDefaults.standard.set(curtLevel, forKey: "curtLevel")
     }
 
